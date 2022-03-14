@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[317],{4969:function(e,t,l){l.r(t);var n=l(7294),r=l(5414),a=l(6446);t.default=function(e){var t=e.data;return console.log(t),n.createElement(n.Fragment,null,n.createElement(r.q,null,n.createElement("meta",{charSet:"utf-8"}),n.createElement("title",null,"Projects | Berke YONCACI")),n.createElement("div",null,"This is projects page."),n.createElement(a.Z,{to:"/"},"Go to Home Page"))}}}]);
+//# sourceMappingURL=component---src-pages-projects-tsx-c78c74a66284211ac9af.js.map

@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[49],{564:function(e,t,l){l.r(t);var n=l(7294),a=l(5414),r=l(6446);t.default=function(){return n.createElement(n.Fragment,null,n.createElement(a.q,null,n.createElement("meta",{charSet:"utf-8"}),n.createElement("title",null,"About | Berke YONCACI")),n.createElement("div",null,"This is about page."),n.createElement(r.Z,{to:"/"},"Go to Home Page"))}}}]);
+//# sourceMappingURL=component---src-pages-about-tsx-3c3c8cb93945b8dfcf60.js.map
