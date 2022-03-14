@@ -45,8 +45,12 @@ const IndexPage: React.FC<PageProps> = () => {
 
           {/* TODO: add hyperlinks here(to props) etc. */}
           <div className="flex flex-row-reverse mt-5">
-            <Button icon={{ name: faLinkedin }}>LinkedIn</Button>
-            <Button icon={{ name: faGithub }}>Github</Button>
+            <Button icon={{ name: faLinkedin }} href="https://www.linkedin.com/in/berkeyoncaci">
+              LinkedIn
+            </Button>
+            <Button icon={{ name: faGithub }} href="https://github.com/berke581">
+              Github
+            </Button>
           </div>
         </div>
       </Layout>

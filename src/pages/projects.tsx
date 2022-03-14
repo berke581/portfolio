@@ -14,10 +14,13 @@ const ProjectsPage: React.FC = () => {
       <Layout>
         <div className="grid grid-cols-2">
           <Card
-            header="Registration API"
-            contentTop="User registration API created using Spring Boot. (TODO: packages)"
+            header="Registration/Login Backend"
+            contentTop="User registration API created using Spring Boot and Spring Security. PostgreSQL is used as the database."
             footer={
-              <Button icon={{ name: faGithub }} href="https://google.com">
+              <Button
+                icon={{ name: faGithub }}
+                href="https://github.com/berke581/registration-backend"
+              >
                 Project Link
               </Button>
             }
