@@ -28,3 +28,7 @@ export const buttonDanger = classnames(
   'hover:text-blue-200',
   'hover:border-red-600',
 )
+
+export const buttonInnerBase = classnames('flex', 'justify-center', 'items-center', 'gap-2')
+
+export const buttonInnerRight = classnames('flex-row-reverse')

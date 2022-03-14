@@ -4,12 +4,9 @@ import { Scrollbars } from 'react-custom-scrollbars'
 import { Layout } from 'containers'
 import './src/styles/global.css'
 
+// TODO: try to move layout here
 export const wrapPageElement = ({ element, props }) => {
-  return (
-    <Scrollbars universal>
-      <Layout {...props}>{element}</Layout>
-    </Scrollbars>
-  )
+  return <Scrollbars universal>{element}</Scrollbars>
 }
 
 // https://dev.to/crock/gatsby-js-browser-apis-explained-wrappageelement-vs-wraprootelement-n4k

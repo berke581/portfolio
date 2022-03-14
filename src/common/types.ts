@@ -1,3 +1,5 @@
-//  complete here
-
 export type DirectionType = 'row' | 'column'
+
+export type ButtonVariantType = 'primary' | 'danger'
+
+export type IconPlacementType = 'left' | 'right'

@@ -7,10 +7,7 @@ import './src/styles/global.css'
 // const shouldLayoutRender = (componentName) =>
 //   routesWithoutLayout.some((el) => el === componentName) ? false : true
 
+// TODO: try to move layout here
 export const wrapPageElement = ({ element, props }) => {
-  return (
-    <Scrollbars universal>
-      <Layout {...props}>{element}</Layout>
-    </Scrollbars>
-  )
+  return <Scrollbars universal>{element}</Scrollbars>
 }

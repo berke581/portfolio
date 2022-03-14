@@ -1,35 +1,17 @@
-import React, { ComponentPropsWithoutRef } from 'react'
+import React, { useMemo, ComponentPropsWithoutRef, useCallback } from 'react'
 import { Link } from 'gatsby'
 import { LinkGetProps } from '@reach/router'
-import { FontAwesomeIconProps } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome'
 import { classnames } from 'tailwindcss-classnames'
 import * as styles from './styles'
+import { ButtonVariantType, IconPlacementType } from 'common/types'
 
-// TODO: base, primary etc.
-export type VariantType = 'primary' | 'secondary' | 'danger'
 export type ButtonProps = {
   to?: string
-  variant?: VariantType
-  icon?: FontAwesomeIconProps
+  href?: string
+  variant?: ButtonVariantType
+  icon?: { name: FontAwesomeIconProps['icon']; placement?: IconPlacementType }
 } & ComponentPropsWithoutRef<'button'>
-
-// TODO: fix button classes
-// const button = classnames(
-//   'px-4',
-//   'py-1',
-//   'm-2',
-//   'inline-block',
-//   'text-lg',
-//   'text-gray-800',
-//   'font-semibold',
-//   'rounded-lg',
-//   'border-2',
-//   'border-gray-200',
-//   'hover:text-gray-200',
-//   'hover:bg-gray-800',
-//   'hover:border-gray-800',
-// )
-// const active = classnames('text-blue-200', 'bg-gray-800', 'border-gray-800')
 
 const isActive = (args: LinkGetProps) => {
   return args.isCurrent
@@ -41,24 +23,48 @@ export const Button: React.FC<ButtonProps> = ({
   variant = 'primary',
   children,
   to,
+  href,
   icon,
   ...rest
 }) => {
-  // maybe useState?
-  const style =
-    variant === 'primary'
-      ? classnames(styles.buttonBase, styles.buttonPrimary)
-      : classnames(styles.buttonBase, styles.buttonDanger)
+  const buttonStyle = useMemo(
+    () =>
+      variant === 'primary'
+        ? classnames(styles.buttonBase, styles.buttonPrimary)
+        : classnames(styles.buttonBase, styles.buttonDanger),
+    [variant],
+  )
+
+  // TODO: finish here, it doesn't work properly now
+  const buttonInnerStyle = useMemo(
+    () =>
+      !icon?.placement
+        ? classnames(styles.buttonInnerBase)
+        : classnames(styles.buttonInnerBase, styles.buttonInnerRight),
+    [icon],
+  )
+
+  const InnerButton = useCallback(
+    () => (
+      <div className={buttonInnerStyle}>
+        {icon && <FontAwesomeIcon icon={icon.name} />}
+        {children}
+      </div>
+    ),
+    [buttonStyle, buttonInnerStyle, icon, children],
+  )
 
   return to ? (
-    <Link to={to} className={style} getProps={isActive}>
-      {children}
+    <Link to={to} className={buttonStyle} getProps={isActive}>
+      <InnerButton />
     </Link>
+  ) : href ? (
+    <a href={href} className={buttonStyle} target="_blank" rel="noreferrer">
+      <InnerButton />
+    </a>
   ) : (
-    <button className={style} {...rest}>
-      {/* fix here, icon in button */}
-      {/* {icon && <FontAwesomeIcon {...icon} />} */}
-      {children}
+    <button className={buttonStyle} {...rest}>
+      <InnerButton />
     </button>
   )
 }

@@ -3,6 +3,7 @@ import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 import { Divider, Icon } from 'components'
 import * as styles from './styles'
 
+// TODO: maybe create HyperLink component
 export const Footer: React.FC = () => {
   return (
     <footer className={styles.footerFlex}>

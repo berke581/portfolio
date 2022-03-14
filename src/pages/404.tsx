@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { Button } from 'components'
 
-const notFoundFlex = classnames('h-full', 'flex', 'flex-col', 'justify-center', 'items-center')
+const notFoundFlex = classnames('h-screen', 'flex', 'flex-col', 'justify-center', 'items-center')
 
 const NotFoundPage: React.FC<PageProps> = () => {
   return (
