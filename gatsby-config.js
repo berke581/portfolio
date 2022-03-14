@@ -4,8 +4,9 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://www.yourdomain.tld',
     title: 'portfolio',
+    siteUrl: 'https://www.berkeyoncaci.com',
+    description: 'Berke YONCACI portfolio website.',
   },
   plugins: [
     'gatsby-plugin-styled-components',
