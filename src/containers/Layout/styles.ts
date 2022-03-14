@@ -10,7 +10,7 @@ export const colors = {
 // Layout
 export const outerWrapper = classnames('min-h-full', 'relative')
 
-export const contentArea = classnames('mx-60', 'py-20', 'px-8')
+export const contentArea = classnames('mx-10', 'md:mx-28', 'lg:mx-60', 'py-20', 'px-8')
 
 // Header
 export const headerFlex = classnames(

@@ -31,7 +31,7 @@ const IndexPage: React.FC<PageProps> = () => {
               <span className="text-gray-600">Ankara University</span>.
             </div>
             <div className="m-2 text-2xl">
-              I am currently working as a Web Developer, mainly on the Frontend side using React.
+              I am currently working as a Web Developer, mainly on the Frontend side using ReactJS.
               And improving my Backend development skills too.
             </div>
             <div className="m-2 text-2xl">
