@@ -26,7 +26,7 @@ const IndexPage: React.FC<PageProps> = () => {
               Hi, I&apos;m <span className="text-purple-600">Berke</span>.
             </div>
             <div className="m-2 text-2xl">
-              I am a am a self-motivated programmer and a{' '}
+              I am a self-motivated programmer and a{' '}
               <span className="text-gray-600">Computer Engineering</span> student at{' '}
               <span className="text-gray-600">Ankara University</span>.
             </div>
