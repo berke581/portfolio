@@ -1,11 +1,16 @@
 import React, { useState } from 'react'
 import { usePopper } from 'react-popper'
+import { VirtualElement } from '@popperjs/core/lib/types'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
-import { Button } from 'components'
+import { Button, Divider } from 'components'
+import { MenuContainer } from './MenuContainer'
+import { MenuItem } from './MenuItem'
 
 export const HamburgerMenu: React.FC = () => {
-  const [referenceElement, setReferenceElement] = useState<any>(undefined)
-  const [popperElement, setPopperElement] = useState<any>(undefined)
+  const [referenceElement, setReferenceElement] = useState<
+    Element | VirtualElement | null | undefined
+  >(undefined)
+  const [popperElement, setPopperElement] = useState<HTMLElement | null | undefined>(undefined)
 
   const [isVisible, setIsVisible] = useState<boolean>(false)
 
@@ -21,25 +26,20 @@ export const HamburgerMenu: React.FC = () => {
     ],
   })
 
-  console.log(referenceElement, popperElement)
-
   return (
     <>
       <Button
         icon={{ name: faBars }}
         ref={setReferenceElement}
         onClick={() => setIsVisible((prev) => !prev)}
+        onBlur={() => setIsVisible(false)}
       />
       {isVisible && (
-        <div
-          className="fixed z-[1000] border-2 border-gray-300 bg-gray-100 rounded-md flex flex-col px-4 py-2"
-          ref={setPopperElement}
-          style={styles.popper}
-          {...attributes.popper}
-        >
-          <Button to="/">Home</Button>
-          <Button to="/projects/">Projects</Button>
-        </div>
+        <MenuContainer styles={styles} attributes={attributes} ref={setPopperElement}>
+          <MenuItem to="/">Home</MenuItem>
+          <Divider direction="horizontal" />
+          <MenuItem to="/projects/">Projects</MenuItem>
+        </MenuContainer>
       )}
     </>
   )

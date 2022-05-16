@@ -23,7 +23,6 @@ const isActive = (args: LinkGetProps) => {
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  // eslint-disable-next-line react/prop-types
   ({ children, to, href, icon, variant = 'primary', ...rest }, ref) => {
     const buttonStyle = useMemo(
       () =>
