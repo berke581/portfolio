@@ -1,16 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { usePopper } from 'react-popper'
-import { VirtualElement } from '@popperjs/core/lib/types'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { Button, Divider } from 'components'
 import { MenuContainer } from './MenuContainer'
 import { MenuItem } from './MenuItem'
+import { useHandleClickOutside } from 'utils/useHandleClickOutside'
 
 export const HamburgerMenu: React.FC = () => {
-  const [referenceElement, setReferenceElement] = useState<
-    Element | VirtualElement | null | undefined
-  >(undefined)
-  const [popperElement, setPopperElement] = useState<HTMLElement | null | undefined>(undefined)
+  const [referenceElement, setReferenceElement] = useState<HTMLElement | null>(null)
+  const [popperElement, setPopperElement] = useState<HTMLElement | null>(null)
+  const containerElementRef = useRef<HTMLElement>(null)
 
   const [isVisible, setIsVisible] = useState<boolean>(false)
 
@@ -26,13 +25,17 @@ export const HamburgerMenu: React.FC = () => {
     ],
   })
 
+  const handleClickOutside = () => {
+    setIsVisible(false)
+  }
+  useHandleClickOutside(containerElementRef, handleClickOutside)
+
   return (
-    <>
+    <span ref={containerElementRef}>
       <Button
         icon={{ name: faBars }}
         ref={setReferenceElement}
         onClick={() => setIsVisible((prev) => !prev)}
-        onBlur={() => setIsVisible(false)}
       />
       {isVisible && (
         <MenuContainer styles={styles} attributes={attributes} ref={setPopperElement}>
@@ -41,6 +44,6 @@ export const HamburgerMenu: React.FC = () => {
           <MenuItem to="/projects/">Projects</MenuItem>
         </MenuContainer>
       )}
-    </>
+    </span>
   )
 }
