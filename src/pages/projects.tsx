@@ -35,19 +35,19 @@ const ProjectsPage: React.FC = () => {
             }
           />
           <Card
-            header="Minesweeper"
-            contentTop="Minesweeper game created using Vanilla Javascript."
+            header="ModelViewer [WIP]"
+            contentTop="I've been working on this project to get better at OpenGL and Graphics Programming in general. The purpose of this project is to create a basic rendering engine that will render 3D models. It is currently work in progress."
             footer={
-              <Button icon={{ name: faGithub }} href="https://github.com/berke581/Minesweeper">
+              <Button icon={{ name: faGithub }} href="https://github.com/berke581/ModelViewer">
                 Project Details
               </Button>
             }
           />
           <Card
-            header="ModelViewer [WIP]"
-            contentTop="I've been working on this project to get better at OpenGL and Graphics Programming in general. The purpose of this project is to create a basic rendering engine that will render 3D models. It is currently work in progress."
+            header="Minesweeper"
+            contentTop="Minesweeper game created using Vanilla Javascript."
             footer={
-              <Button icon={{ name: faGithub }} href="https://github.com/berke581/ModelViewer">
+              <Button icon={{ name: faGithub }} href="https://github.com/berke581/Minesweeper">
                 Project Details
               </Button>
             }

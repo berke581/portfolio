@@ -12,11 +12,11 @@ export const Footer: React.FC = () => {
     <footer className={styles.footerFlex}>
       {deviceType !== DeviceType.MOBILE && (
         <div>
-          Created by Berke using{' '}
+          Created by Berke using&nbsp;
           <a href="https://www.gatsbyjs.com/" className={styles.link}>
             Gatsby
-          </a>{' '}
-          and{' '}
+          </a>
+          &nbsp; and&nbsp;
           <a href="https://tailwindcss.com/" className={styles.link}>
             Tailwind CSS
           </a>
