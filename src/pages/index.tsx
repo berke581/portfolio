@@ -1,18 +1,14 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { graphql, PageProps } from 'gatsby'
-import { faGamepad } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { Button } from 'components'
 import { Layout } from 'containers'
-
-export type ApiResponseType = {
-  id: string
-  joke: string
-  status: number
-}
+import { DeviceType, useDeviceType } from 'utils/useDeviceType'
 
 const IndexPage: React.FC<PageProps> = () => {
+  const deviceType = useDeviceType()
+
   return (
     <>
       <Helmet>
@@ -44,14 +40,16 @@ const IndexPage: React.FC<PageProps> = () => {
           </div>
 
           {/* TODO: add hyperlinks here(to props) etc. */}
-          <div className="flex flex-row-reverse mt-5">
-            <Button icon={{ name: faLinkedin }} href="https://www.linkedin.com/in/berkeyoncaci">
-              LinkedIn
-            </Button>
-            <Button icon={{ name: faGithub }} href="https://github.com/berke581">
-              Github
-            </Button>
-          </div>
+          {deviceType !== DeviceType.MOBILE && (
+            <div className="flex flex-row-reverse mt-5">
+              <Button icon={{ name: faLinkedin }} href="https://www.linkedin.com/in/berkeyoncaci">
+                LinkedIn
+              </Button>
+              <Button icon={{ name: faGithub }} href="https://github.com/berke581">
+                Github
+              </Button>
+            </div>
+          )}
         </div>
       </Layout>
     </>

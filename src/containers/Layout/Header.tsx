@@ -1,14 +1,22 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { faGithub, faLinkedin, faMedium } from '@fortawesome/free-brands-svg-icons'
-import { Button, Divider, Icon } from 'components'
+import { Divider, Icon } from 'components'
+import { Menu } from 'containers'
+import { useDeviceType, DeviceType } from 'utils/useDeviceType'
 import * as styles from './styles'
 
 export const Header: React.FC = () => {
+  const deviceType = useDeviceType()
+
+  const showDivider = useMemo(() => deviceType === DeviceType.PC, [deviceType])
+  const isHamburger = useMemo(() => deviceType === DeviceType.MOBILE, [deviceType])
+
   return (
     <header className={styles.headerFlex}>
       <div className={styles.headerInnerFlex}>
+        {/* <div> */}
         Berke YONCACI
-        <Divider direction="row" />
+        {showDivider && <Divider direction="vertical" />}
         <div className={styles.iconFlex}>
           <Icon
             href="https://www.linkedin.com/in/berkeyoncaci"
@@ -31,10 +39,7 @@ export const Header: React.FC = () => {
         </div>
       </div>
       <div>
-        <Button to="/">Home</Button>
-        {/* <Button to="/about">About</Button> */}
-        {/* last slash is important for active page styling for button */}
-        <Button to="/projects/">Projects</Button>
+        <Menu isHamburger={isHamburger} />
       </div>
     </header>
   )

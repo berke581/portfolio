@@ -1,3 +1,6 @@
+/* eslint-disable react/display-name */
+// TODO: fix disabling eslint here
+
 import React, { useMemo, ComponentPropsWithoutRef, useCallback } from 'react'
 import { Link } from 'gatsby'
 import { LinkGetProps } from '@reach/router'
@@ -19,54 +22,52 @@ const isActive = (args: LinkGetProps) => {
     : {}
 }
 
-export const Button: React.FC<ButtonProps> = ({
-  variant = 'primary',
-  children,
-  to,
-  href,
-  icon,
-  ...rest
-}) => {
-  const buttonStyle = useMemo(
-    () =>
-      variant === 'primary'
-        ? classnames(styles.buttonBase, styles.buttonPrimary)
-        : classnames(styles.buttonBase, styles.buttonDanger),
-    [variant],
-  )
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  // eslint-disable-next-line react/prop-types
+  ({ children, to, href, icon, variant = 'primary', ...rest }, ref) => {
+    const buttonStyle = useMemo(
+      () =>
+        variant === 'primary'
+          ? classnames(styles.buttonBase, styles.buttonPrimary)
+          : classnames(styles.buttonBase, styles.buttonDanger),
+      [variant],
+    )
 
-  // TODO: finish here, it doesn't work properly now
-  const buttonInnerStyle = useMemo(
-    () =>
-      !icon?.placement
-        ? classnames(styles.buttonInnerBase)
-        : classnames(styles.buttonInnerBase, styles.buttonInnerRight),
-    [icon],
-  )
+    // TODO: finish here, it doesn't work properly now
+    const buttonInnerStyle = useMemo(
+      () =>
+        !icon?.placement
+          ? classnames(styles.buttonInnerBase)
+          : classnames(styles.buttonInnerBase, styles.buttonInnerRight),
+      [icon],
+    )
 
-  const InnerButton = useCallback(
-    () => (
-      <div className={buttonInnerStyle}>
-        {icon && <FontAwesomeIcon icon={icon.name} />}
-        {children}
-      </div>
-    ),
-    [buttonStyle, buttonInnerStyle, icon, children],
-  )
+    const InnerButton = useCallback(
+      () => (
+        <div className={buttonInnerStyle}>
+          {icon && <FontAwesomeIcon icon={icon.name} />}
+          {children}
+        </div>
+      ),
+      [buttonStyle, buttonInnerStyle, icon, children],
+    )
 
-  return to ? (
-    <Link to={to} className={buttonStyle} getProps={isActive}>
-      <InnerButton />
-    </Link>
-  ) : href ? (
-    <a href={href} className={buttonStyle} target="_blank" rel="noreferrer">
-      <InnerButton />
-    </a>
-  ) : (
-    <button className={buttonStyle} {...rest}>
-      <InnerButton />
-    </button>
-  )
-}
+    return to ? (
+      // TODO: fix "any" usage here
+      <Link to={to} className={buttonStyle} getProps={isActive} ref={ref as any}>
+        <InnerButton />
+      </Link>
+    ) : href ? (
+      // TODO: pass ref here
+      <a href={href} className={buttonStyle} target="_blank" rel="noreferrer">
+        <InnerButton />
+      </a>
+    ) : (
+      <button className={buttonStyle} ref={ref} {...rest}>
+        <InnerButton />
+      </button>
+    )
+  },
+)
 
 export default Button

@@ -10,7 +10,16 @@ export const colors = {
 // Layout
 export const outerWrapper = classnames('min-h-full', 'relative')
 
-export const contentArea = classnames('mx-10', 'md:mx-28', 'lg:mx-60', 'py-20', 'px-8')
+export const contentArea = classnames(
+  'mx-2',
+  'md:mx-4',
+  'lg:mx-24',
+  'xl:mx-60',
+  'py-20',
+  'px-2',
+  'px-4',
+  'md:px-8',
+)
 
 // Header
 export const headerFlex = classnames(
@@ -25,8 +34,10 @@ export const headerFlex = classnames(
 
 export const headerInnerFlex = classnames(
   'flex',
-  'items-center',
-  'h-full',
+  'flex-col',
+  'lg:flex-row',
+  'lg:items-center',
+  'lg:h-full',
   'text-lg',
   'font-semibold',
   'm-2',
@@ -40,7 +51,9 @@ export const link = classnames('text-pink-500', 'hover:underline')
 
 export const footerFlex = classnames(
   'flex',
-  'justify-between',
+  'justify-end',
+  'md:justify-between',
+  'gap-8',
   'items-center',
   'text-blue-200',
   'font-bold',
@@ -52,9 +65,11 @@ export const footerFlex = classnames(
   'bottom-0',
   'left-0',
   'right-0',
-  'h-12',
+  'h-14',
 )
 
 export const footerInnerFlex = classnames('flex', 'items-center', 'h-full')
+
+export const footerLocationFlex = classnames('flex', 'items-center', 'gap-1')
 
 export const mapMarker = classnames('mx-1')

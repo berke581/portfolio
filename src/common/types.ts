@@ -1,4 +1,4 @@
-export type DirectionType = 'row' | 'column'
+export type DirectionType = 'vertical' | 'horizontal'
 
 export type ButtonVariantType = 'primary' | 'danger'
 

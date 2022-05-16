@@ -12,7 +12,7 @@ const ProjectsPage: React.FC = () => {
         <title>Projects | Berke YONCACI</title>
       </Helmet>
       <Layout>
-        <div className="grid grid-cols-2">
+        <div className="grid grid-cols-1 md:grid-cols-2">
           <Card
             header="Registration/Login Backend"
             contentTop="User registration API created using Spring Boot and Spring Security. PostgreSQL is used as the database."
