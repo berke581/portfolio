@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
           <a href="https://www.gatsbyjs.com/" className={styles.link}>
             Gatsby
           </a>
-          &nbsp; and&nbsp;
+          &nbsp;and&nbsp;
           <a href="https://tailwindcss.com/" className={styles.link}>
             Tailwind CSS
           </a>
