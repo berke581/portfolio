@@ -16,6 +16,10 @@
   html {
     @apply bg-gray-100;
   }
+
+  body {
+    min-height: 100vh;
+  }
 }
 
 @layer components {
