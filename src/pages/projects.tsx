@@ -24,7 +24,7 @@ const ProjectsPage: React.FC = () => {
                 Project Details
               </Button>
             }
-            enlargeOnHover
+            shadowOnHover
           />
           <Card
             header="Portfolio"
@@ -34,7 +34,7 @@ const ProjectsPage: React.FC = () => {
                 Project Details
               </Button>
             }
-            enlargeOnHover
+            shadowOnHover
           />
           <Card
             header="ModelViewer [WIP]"
@@ -44,7 +44,7 @@ const ProjectsPage: React.FC = () => {
                 Project Details
               </Button>
             }
-            enlargeOnHover
+            shadowOnHover
           />
           <Card
             header="Minesweeper"
@@ -54,7 +54,7 @@ const ProjectsPage: React.FC = () => {
                 Project Details
               </Button>
             }
-            enlargeOnHover
+            shadowOnHover
           />
         </div>
       </Layout>

@@ -1,4 +1,5 @@
 import React, { ComponentPropsWithoutRef } from 'react'
+import { classnames } from 'tailwindcss-classnames'
 
 export type CardProps = ComponentPropsWithoutRef<'div'> & {
   header?: string | React.ReactElement
@@ -6,6 +7,7 @@ export type CardProps = ComponentPropsWithoutRef<'div'> & {
   // contentBottom?: string | React.ReactElement
   footer?: string | React.ReactElement
   enlargeOnHover?: boolean
+  shadowOnHover?: boolean
 }
 
 export const Card: React.FC<CardProps> = ({
@@ -13,13 +15,29 @@ export const Card: React.FC<CardProps> = ({
   contentTop,
   footer,
   enlargeOnHover = false,
+  shadowOnHover = false,
 }) => {
-  const enlargeOnHoverStyle = enlargeOnHover ? ' hover:scale-105 transition-transform' : ''
+  const baseStyle = classnames(
+    'm-2',
+    'p-2',
+    'rounded-md',
+    'shadow-md',
+    'text-gray-600',
+    'bg-gray-100',
+    'flex-auto',
+    'min-h-[280px]' as any,
+  )
+  const enlargeOnHoverStyle = classnames('hover:scale-105', 'transition-transform')
+  const shadowOnHoverStyle = classnames('hover:shadow-lg', 'transition-shadow')
+
+  const style = classnames(
+    baseStyle,
+    enlargeOnHover ? enlargeOnHoverStyle : undefined,
+    shadowOnHover ? shadowOnHoverStyle : undefined,
+  )
 
   return (
-    <div
-      className={`m-2 p-2 rounded-md shadow-md text-gray-600 bg-gray-100 flex-auto min-h-[280px]${enlargeOnHoverStyle}`}
-    >
+    <div className={style}>
       <div className="min-h-[70%] flex flex-col justify-start">
         {header && <div className="m-1 p-1 border-gray-300 border-b-2 font-bold">{header}</div>}
         <div className="m-1 p-1">{contentTop}</div>

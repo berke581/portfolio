@@ -4,6 +4,7 @@ import { DirectionType } from 'common/types'
 
 export type DividerProps = {
   direction: DirectionType
+  children?: React.ReactNode
 }
 
 export const Divider: React.FC<DividerProps> = ({ direction, children }) => {

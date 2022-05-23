@@ -6,6 +6,7 @@ import * as styles from './styles'
 
 export type MenuItemProps = {
   to: string
+  children?: React.ReactNode
 }
 
 const isActive = (args: LinkGetProps) => {
