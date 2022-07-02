@@ -21,7 +21,7 @@ const IndexPage: React.FC<PageProps> = () => {
             <>
               <div className="flex flex-col">
                 <div className="m-2 text-4xl">
-                  Hi, I&apos;m <span className="text-purple-600">Berke</span>.
+                  Hi, I&apos;m <span className="text-violet-600">Berke</span>.
                 </div>
                 <div className="m-2 text-2xl">
                   I am a self-motivated programmer and a{' '}

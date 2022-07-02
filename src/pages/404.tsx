@@ -1,12 +1,25 @@
 import React from 'react'
 import { PageProps } from 'gatsby'
 import { Helmet } from 'react-helmet'
-import { classnames } from 'tailwindcss-classnames'
+import {
+  classnames,
+  alignItems,
+  display,
+  flexDirection,
+  height,
+  justifyContent,
+} from 'tailwindcss-classnames'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { Button } from 'components'
 
-const notFoundFlex = classnames('h-screen', 'flex', 'flex-col', 'justify-center', 'items-center')
+const notFoundFlex = classnames(
+  height('h-screen'),
+  display('flex'),
+  flexDirection('flex-col'),
+  justifyContent('justify-center'),
+  alignItems('items-center'),
+)
 
 const NotFoundPage: React.FC<PageProps> = () => {
   return (

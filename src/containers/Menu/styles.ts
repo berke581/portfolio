@@ -1,11 +1,16 @@
-import { classnames } from 'tailwindcss-classnames'
+import {
+  classnames,
+  backgroundColor,
+  borderRadius,
+  padding,
+  textColor,
+} from 'tailwindcss-classnames'
 
 export const menuItemBase = classnames(
-  'text-gray-200',
-  'rounded-sm',
-  'bg-gray-600',
-  'p-2',
-  'hover:bg-gray-700',
+  textColor('text-gray-200'),
+  borderRadius('rounded-sm'),
+  backgroundColor('bg-gray-600', 'hover:bg-gray-700'),
+  padding('p-2'),
 )
 
-export const menuItemActive = classnames('bg-gray-700')
+export const menuItemActive = classnames(backgroundColor('bg-gray-700'))

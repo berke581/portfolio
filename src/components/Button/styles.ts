@@ -1,34 +1,54 @@
-import { classnames } from 'tailwindcss-classnames'
+import {
+  classnames,
+  alignItems,
+  backgroundColor,
+  borderColor,
+  borderRadius,
+  borderWidth,
+  display,
+  flexDirection,
+  fontSize,
+  fontWeight,
+  gap,
+  justifyContent,
+  margin,
+  padding,
+  textColor,
+} from 'tailwindcss-classnames'
 
 export const buttonBase = classnames(
-  'px-4',
-  'py-1',
-  'm-2',
-  'inline-block',
-  'text-lg',
-  'font-semibold',
-  'rounded-lg',
-  'border-2',
+  padding('px-4', 'py-1'),
+  margin('m-2'),
+  display('inline-block'),
+  fontSize('text-lg'),
+  fontWeight('font-semibold'),
+  borderRadius('rounded-lg'),
+  borderWidth('border-2'),
 )
 
 export const buttonPrimary = classnames(
-  'text-gray-800',
-  'border-gray-200',
-  'hover:text-gray-200',
-  'hover:bg-gray-800',
-  'hover:border-gray-800',
+  textColor('text-gray-800', 'hover:text-gray-200'),
+  borderColor('border-gray-200', 'hover:border-gray-800'),
+  backgroundColor('hover:bg-gray-800'),
 )
 
-export const buttonPrimaryActive = classnames('text-gray-200', 'bg-gray-800', 'border-gray-800')
+export const buttonPrimaryActive = classnames(
+  textColor('text-gray-200'),
+  backgroundColor('bg-gray-800'),
+  borderColor('border-gray-800'),
+)
 
 export const buttonDanger = classnames(
-  'text-white',
-  'border-red-400',
-  'bg-red-600',
-  'hover:text-blue-200',
-  'hover:border-red-600',
+  textColor('text-white', 'hover:text-blue-200'),
+  borderColor('border-red-400', 'hover:border-red-600'),
+  backgroundColor('bg-red-600'),
 )
 
-export const buttonInnerBase = classnames('flex', 'justify-center', 'items-center', 'gap-2')
+export const buttonInnerBase = classnames(
+  display('flex'),
+  justifyContent('justify-center'),
+  alignItems('items-center'),
+  gap('gap-2'),
+)
 
-export const buttonInnerRight = classnames('flex-row-reverse')
+export const buttonInnerRight = classnames(flexDirection('flex-row-reverse'))

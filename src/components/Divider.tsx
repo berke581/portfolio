@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { classnames } from 'tailwindcss-classnames'
+import { classnames, borderColor, borderWidth, height, margin, width } from 'tailwindcss-classnames'
 import { DirectionType } from 'common/types'
 
 export type DividerProps = {
@@ -13,8 +13,20 @@ export const Divider: React.FC<DividerProps> = ({ direction, children }) => {
   const dividerStyle = useMemo(
     () =>
       direction === 'vertical'
-        ? classnames('h-full', 'border-r-2', 'w-0', 'mx-2', 'border-gray-400')
-        : classnames('w-full', 'border-b-2', 'h-0', 'my-2', 'border-gray-400'),
+        ? classnames(
+            height('h-full'),
+            borderWidth('border-r-2'),
+            width('w-0'),
+            margin('mx-2'),
+            borderColor('border-gray-400'),
+          )
+        : classnames(
+            width('w-full'),
+            borderWidth('border-b-2'),
+            height('h-0'),
+            margin('my-2'),
+            borderColor('border-gray-400'),
+          ),
     [direction],
   )
   return <ContainerElement className={dividerStyle}>{children}</ContainerElement>

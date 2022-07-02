@@ -1,4 +1,24 @@
-import { classnames } from 'tailwindcss-classnames'
+import {
+  classnames,
+  alignItems,
+  backgroundColor,
+  borderColor,
+  borderWidth,
+  display,
+  flexDirection,
+  fontSize,
+  fontWeight,
+  gap,
+  height,
+  inset,
+  justifyContent,
+  margin,
+  minHeight,
+  padding,
+  position,
+  textColor,
+  textDecoration,
+} from 'tailwindcss-classnames'
 
 export const colors = {
   gitHub: '#333333',
@@ -8,68 +28,64 @@ export const colors = {
 }
 
 // Layout
-export const outerWrapper = classnames('min-h-full', 'relative')
+export const outerWrapper = classnames(minHeight('min-h-full'), position('relative'))
 
 export const contentArea = classnames(
-  'mx-2',
-  'md:mx-4',
-  'lg:mx-24',
-  'xl:mx-60',
-  'py-20',
-  'px-2',
-  'px-4',
-  'md:px-8',
+  margin('mx-2', 'md:mx-4', 'lg:mx-24', 'xl:mx-60'),
+  padding('py-20', 'px-2', 'px-4', 'md:px-8'),
 )
 
 // Header
 export const headerFlex = classnames(
-  'flex',
-  'justify-between',
-  'h-8',
-  'items-end',
-  'border-b-2',
-  'border-gray-400',
-  'mb-4',
+  display('flex'),
+  justifyContent('justify-between'),
+  height('h-8'),
+  alignItems('items-end'),
+  borderWidth('border-b-2'),
+  borderColor('border-gray-400'),
+  margin('mb-4'),
 )
 
 export const headerInnerFlex = classnames(
-  'flex',
-  'flex-col',
-  'lg:flex-row',
-  'lg:items-center',
-  'lg:h-full',
-  'text-lg',
-  'font-semibold',
-  'm-2',
-  'text-gray-800',
+  display('flex'),
+  flexDirection('flex-col', 'lg:flex-row'),
+  alignItems('lg:items-center'),
+  height('lg:h-full'),
+  fontSize('text-lg'),
+  fontWeight('font-semibold'),
+  margin('m-2'),
+  textColor('text-gray-800'),
 )
 
-export const iconFlex = classnames('flex', 'gap-1')
+export const iconFlex = classnames(display('flex'), gap('gap-1'))
 
 // Footer
-export const link = classnames('text-pink-500', 'hover:underline')
+export const link = classnames(textColor('text-pink-500'), textDecoration('hover:underline'))
 
 export const footerFlex = classnames(
-  'flex',
-  'justify-end',
-  'md:justify-between',
-  'gap-8',
-  'items-center',
-  'text-blue-200',
-  'font-bold',
-  'bg-gray-600',
-  'py-2',
-  'px-4',
-  'items-center',
-  'absolute',
-  'bottom-0',
-  'left-0',
-  'right-0',
-  'h-14',
+  display('flex'),
+  justifyContent('justify-end', 'md:justify-between'),
+  gap('gap-8'),
+  alignItems('items-center'),
+  textColor('text-blue-200'),
+  fontWeight('font-bold'),
+  backgroundColor('bg-gray-600'),
+  padding('py-2', 'px-4'),
+  position('absolute'),
+  inset('bottom-0', 'left-0', 'right-0'),
+  height('h-14'),
 )
 
-export const footerInnerFlex = classnames('flex', 'items-center', 'h-full')
+export const footerInnerFlex = classnames(
+  display('flex'),
+  alignItems('items-center'),
+  height('h-full'),
+)
 
-export const footerLocationFlex = classnames('flex', 'items-center', 'gap-1')
+export const footerLocationFlex = classnames(
+  display('flex'),
+  alignItems('items-center'),
+  gap('gap-1'),
+)
 
-export const mapMarker = classnames('mx-1')
+export const mapMarker = classnames(margin('mx-1'))
