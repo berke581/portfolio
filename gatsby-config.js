@@ -9,7 +9,6 @@ module.exports = {
     description: 'Berke YONCACI portfolio website.',
   },
   plugins: [
-    'gatsby-plugin-styled-components',
     'gatsby-plugin-root-import',
     'gatsby-plugin-postcss',
     `gatsby-plugin-react-helmet`,
