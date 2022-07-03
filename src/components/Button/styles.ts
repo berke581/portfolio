@@ -27,9 +27,9 @@ export const buttonBase = classnames(
 )
 
 export const buttonPrimary = classnames(
-  textColor('text-gray-800', 'hover:text-gray-200'),
-  borderColor('border-gray-200', 'hover:border-gray-800'),
-  backgroundColor('hover:bg-gray-800'),
+  textColor('text-gray-800', 'hover:text-gray-200', 'disabled:text-gray-800'),
+  borderColor('border-gray-200', 'hover:border-gray-800', 'disabled:border-gray-300'),
+  backgroundColor('hover:bg-gray-800', 'disabled:bg-gray-200'),
 )
 
 export const buttonPrimaryActive = classnames(

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -27,6 +27,8 @@ const schema = yup
   .required()
 
 export const Contact: React.FC = () => {
+  const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(false)
+
   const {
     register,
     handleSubmit,
@@ -42,6 +44,8 @@ export const Contact: React.FC = () => {
     toast('testing toast package', { type: 'warning' })
     toast('testing toast package', { type: 'default' })
     toast('testing toast package', { type: 'info' })
+
+    setIsButtonDisabled(true)
   }
 
   return (
@@ -88,7 +92,9 @@ export const Contact: React.FC = () => {
                     {...register('body')}
                   />
                 </div>
-                <Button>Submit</Button>
+                <Button disabled={isButtonDisabled} isLoading={isButtonDisabled}>
+                  Submit
+                </Button>
               </form>
             </div>
           }

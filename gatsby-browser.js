@@ -3,6 +3,7 @@ import { SWRConfig } from 'swr'
 import { Scrollbars } from 'react-custom-scrollbars'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.min.css'
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import { Layout } from 'containers'
 import './src/styles/global.css'
 
