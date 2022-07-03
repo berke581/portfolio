@@ -1,5 +1,3 @@
-/* eslint-disable react/display-name */
-// TODO: fix disabling eslint here
 import React, { ComponentPropsWithoutRef } from 'react'
 import {
   classnames,
@@ -71,5 +69,7 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
     )
   },
 )
+
+TextArea.displayName = 'TextArea'
 
 export default TextArea

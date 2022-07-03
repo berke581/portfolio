@@ -1,5 +1,3 @@
-/* eslint-disable react/display-name */
-// TODO: fix disabling eslint here
 import React, { ComponentPropsWithoutRef } from 'react'
 import {
   classnames,
@@ -64,5 +62,7 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
     )
   },
 )
+
+InputText.displayName = 'InputText'
 
 export default InputText

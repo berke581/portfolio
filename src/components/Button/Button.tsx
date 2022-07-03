@@ -1,5 +1,3 @@
-/* eslint-disable react/display-name */
-// TODO: fix disabling eslint here
 import React, { useMemo, ComponentPropsWithoutRef, useCallback } from 'react'
 import { Link } from 'gatsby'
 import { LinkGetProps } from '@reach/router'
@@ -67,5 +65,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     )
   },
 )
+
+Button.displayName = 'Button'
 
 export default Button
