@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
+import { toast } from 'react-toastify'
 import { Button, Card, InputText, TextArea } from 'components'
 import { Layout } from 'containers'
 
@@ -34,7 +35,14 @@ export const Contact: React.FC = () => {
 
   // TODO: integrate to API
   // when the service is ready
-  const onSubmit = (data: FormInputs) => console.log(data)
+  const onSubmit = (data: FormInputs) => {
+    console.log(data)
+    toast('testing toast package', { type: 'success' })
+    toast('testing toast package', { type: 'error' })
+    toast('testing toast package', { type: 'warning' })
+    toast('testing toast package', { type: 'default' })
+    toast('testing toast package', { type: 'info' })
+  }
 
   return (
     <>
