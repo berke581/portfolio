@@ -6,6 +6,7 @@ import { MenuContainer } from './MenuContainer'
 import { MenuItem } from './MenuItem'
 import { useHandleClickOutside } from 'utils/useHandleClickOutside'
 
+// TODO: unify menus
 export const HamburgerMenu: React.FC = () => {
   const [referenceElement, setReferenceElement] = useState<HTMLElement | null>(null)
   const [popperElement, setPopperElement] = useState<HTMLElement | null>(null)
@@ -42,6 +43,8 @@ export const HamburgerMenu: React.FC = () => {
           <MenuItem to="/">Home</MenuItem>
           <Divider direction="horizontal" />
           <MenuItem to="/projects/">Projects</MenuItem>
+          <Divider direction="horizontal" />
+          <MenuItem to="/contact/">Contact</MenuItem>
         </MenuContainer>
       )}
     </span>

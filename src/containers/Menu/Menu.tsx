@@ -6,6 +6,8 @@ export type MenuProps = {
   isHamburger?: boolean
 }
 
+// TODO: unify menus
+// TODO: solve breakpoints for menu
 export const Menu: React.FC<MenuProps> = ({ isHamburger = false }) => {
   return !isHamburger ? (
     <>
@@ -13,6 +15,7 @@ export const Menu: React.FC<MenuProps> = ({ isHamburger = false }) => {
       {/* <Button to="/about">About</Button> */}
       {/* last slash is important for active page styling for button */}
       <Button to="/projects/">Projects</Button>
+      <Button to="/contact/">Contact</Button>
     </>
   ) : (
     <HamburgerMenu />

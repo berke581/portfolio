@@ -1,6 +1,5 @@
 /* eslint-disable react/display-name */
 // TODO: fix disabling eslint here
-
 import React, { useMemo, ComponentPropsWithoutRef, useCallback } from 'react'
 import { Link } from 'gatsby'
 import { LinkGetProps } from '@reach/router'

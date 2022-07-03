@@ -10,34 +10,42 @@ import {
   display,
   flexDirection,
   textColor,
+  width,
   padding,
+  minHeight,
+  resize,
 } from 'tailwindcss-classnames'
 
-type InputTextProps = ComponentPropsWithoutRef<'input'> & {
+type TextAreaProps = ComponentPropsWithoutRef<'textarea'> & {
   label?: string
   isRequired?: boolean
   isError?: boolean
   errorText?: string
 }
 
-const inputContainerStyle = classnames(display('flex'), flexDirection('flex-col'))
+// TODO: maybe combine input related
+// common styles into one style file
+const textAreaContainerStyle = classnames(display('flex'), flexDirection('flex-col'))
 
-const inputTextBase = classnames(
+const textAreaBase = classnames(
+  width('w-full'),
+  minHeight('min-h-[300px]' as any),
   borderWidth('border-2'),
   borderRadius('rounded-md'),
   backgroundColor('bg-white'),
   padding('p-1'),
+  resize('resize-none'),
 )
-const inputTextNormal = classnames(borderColor('border-gray-300'))
-const inputTextError = classnames(borderColor('border-red-600'))
+const textAreaNormal = classnames(borderColor('border-gray-300'))
+const textAreaError = classnames(borderColor('border-red-600'))
 
-export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
+export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
   ({ label, placeholder, isRequired, isError, errorText, id, ...rest }, ref) => {
-    const inputTextStyle = classnames(inputTextBase, isError ? inputTextError : inputTextNormal)
-    const inputTextLabelStyle = classnames(textColor(isError ? 'text-red-600' : 'text-gray-600'))
+    const textAreaStyle = classnames(textAreaBase, isError ? textAreaError : textAreaNormal)
+    const textAreaLabelStyle = classnames(textColor(isError ? 'text-red-600' : 'text-gray-600'))
 
     return (
-      <div className={inputContainerStyle}>
+      <div className={textAreaContainerStyle}>
         {label && (
           <span>
             <label className="text-gray-600" htmlFor={id}>
@@ -50,19 +58,18 @@ export const InputText = React.forwardRef<HTMLInputElement, InputTextProps>(
             )}
           </span>
         )}
-        <input
-          className={inputTextStyle}
+        <textarea
+          className={textAreaStyle}
           placeholder={placeholder}
-          type="text"
           id={id}
           name={id}
           ref={ref}
           {...rest}
         />
-        {errorText && <span className={inputTextLabelStyle}>{errorText}</span>}
+        {errorText && <span className={textAreaLabelStyle}>{errorText}</span>}
       </div>
     )
   },
 )
 
-export default InputText
+export default TextArea

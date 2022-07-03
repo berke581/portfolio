@@ -20,6 +20,12 @@
   body {
     min-height: 100vh;
   }
+
+  * {
+    @apply focus:outline-dashed;
+    @apply outline-2;
+    @apply outline-violet-600/50;
+  }
 }
 
 @layer components {
