@@ -3,7 +3,8 @@ import { useMediaQuery } from 'react-responsive'
 export enum DeviceType {
   MOBILE,
   TABLET,
-  PC,
+  LAPTOP,
+  DESKTOP,
 }
 
 export const useDeviceType = () => {
@@ -11,11 +12,20 @@ export const useDeviceType = () => {
   //   minWidth: 320,
   // })
   const isTablet = useMediaQuery({
-    minWidth: 481,
+    minWidth: 640,
   })
-  const isPC = useMediaQuery({
-    minWidth: 769,
+  const isLaptop = useMediaQuery({
+    minWidth: 1024,
+  })
+  const isDesktop = useMediaQuery({
+    minWidth: 1280,
   })
 
-  return isPC ? DeviceType.PC : isTablet ? DeviceType.TABLET : DeviceType.MOBILE
+  return isDesktop
+    ? DeviceType.DESKTOP
+    : isLaptop
+    ? DeviceType.LAPTOP
+    : isTablet
+    ? DeviceType.TABLET
+    : DeviceType.MOBILE
 }

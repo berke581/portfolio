@@ -31,8 +31,8 @@ export const colors = {
 export const outerWrapper = classnames(minHeight('min-h-full'), position('relative'))
 
 export const contentArea = classnames(
-  margin('mx-2', 'md:mx-4', 'lg:mx-24', 'xl:mx-60'),
-  padding('py-20', 'px-2', 'px-4', 'md:px-8'),
+  margin('mx-2', 'tablet:mx-4' as any, 'laptop:mx-24' as any, 'desktop:mx-60' as any),
+  padding('py-20', 'px-2', 'px-4', 'tablet:px-8' as any),
 )
 
 // Header
@@ -48,9 +48,9 @@ export const headerFlex = classnames(
 
 export const headerInnerFlex = classnames(
   display('flex'),
-  flexDirection('flex-col', 'lg:flex-row'),
-  alignItems('lg:items-center'),
-  height('lg:h-full'),
+  flexDirection('flex-col', 'laptop:flex-row' as any),
+  alignItems('laptop:items-center' as any),
+  height('laptop:h-full' as any),
   fontSize('text-lg'),
   fontWeight('font-semibold'),
   margin('m-2'),
@@ -64,7 +64,7 @@ export const link = classnames(textColor('text-pink-500'), textDecoration('hover
 
 export const footerFlex = classnames(
   display('flex'),
-  justifyContent('justify-end', 'md:justify-between'),
+  justifyContent('justify-end', 'tablet:justify-between' as any),
   gap('gap-8'),
   alignItems('items-center'),
   textColor('text-blue-200'),

@@ -8,7 +8,10 @@ import * as styles from './styles'
 export const Header: React.FC = () => {
   const deviceType = useDeviceType()
 
-  const showDivider = useMemo(() => deviceType === DeviceType.PC, [deviceType])
+  const showDivider = useMemo(
+    () => deviceType === DeviceType.LAPTOP || deviceType === DeviceType.DESKTOP,
+    [deviceType],
+  )
   const isHamburger = useMemo(() => deviceType === DeviceType.MOBILE, [deviceType])
 
   return (

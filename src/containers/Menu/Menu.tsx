@@ -7,7 +7,6 @@ export type MenuProps = {
 }
 
 // TODO: unify menus
-// TODO: solve breakpoints for menu
 export const Menu: React.FC<MenuProps> = ({ isHamburger = false }) => {
   return !isHamburger ? (
     <>

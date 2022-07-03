@@ -15,4 +15,5 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-fontawesome-css`,
   ],
+  trailingSlash: 'always',
 }
