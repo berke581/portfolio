@@ -18,11 +18,11 @@
   }
 
   body {
-    min-height: 100vh;
+    @apply min-h-[100vh];
   }
 
-  * {
-    @apply focus:outline-dashed;
+  *:focus-visible {
+    @apply outline-dashed;
     @apply outline-2;
     @apply outline-violet-600/50;
   }

@@ -52,7 +52,7 @@ export const Contact: React.FC = () => {
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Projects | Berke YONCACI</title>
+        <title>Contact | Berke YONCACI</title>
       </Helmet>
       <Layout>
         <Card
