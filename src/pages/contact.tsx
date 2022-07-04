@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import { toast } from 'react-toastify'
+import axios from 'axios'
 import { Button, Card, InputText, TextArea } from 'components'
 import { Layout } from 'containers'
 
@@ -13,6 +14,8 @@ type FormInputs = {
   title: string
   body: string
 }
+
+const ENDPOINT_URL = 'https://berke581-go-contact-form.herokuapp.com/v1/contact'
 
 const schema = yup
   .object({
@@ -27,25 +30,46 @@ const schema = yup
   .required()
 
 export const Contact: React.FC = () => {
-  const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(false)
+  const [isError, setIsError] = useState<boolean>(false)
+  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [shouldShowToastMessage, setShouldShowToastMessage] = useState<boolean>(false)
 
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<FormInputs>({ resolver: yupResolver(schema) })
 
-  // TODO: integrate to API
-  // when the service is ready
-  const onSubmit = (data: FormInputs) => {
-    console.log(data)
-    toast('testing toast package', { type: 'success' })
-    toast('testing toast package', { type: 'error' })
-    toast('testing toast package', { type: 'warning' })
-    toast('testing toast package', { type: 'default' })
-    toast('testing toast package', { type: 'info' })
+  useEffect(() => {
+    if (!shouldShowToastMessage) {
+      return
+    }
 
-    setIsButtonDisabled(true)
+    if (isError) {
+      toast('Error sending the contact message.', { type: 'error' })
+      setIsError(false)
+    } else {
+      toast('Message successfully sent.', { type: 'success' })
+    }
+
+    setShouldShowToastMessage(false)
+  }, [shouldShowToastMessage])
+
+  const postData = async (data: FormInputs) => {
+    const response = await axios.post(ENDPOINT_URL, data)
+
+    setIsLoading(false)
+    if (response.status !== 200) {
+      setIsError(true)
+    }
+    setShouldShowToastMessage(true)
+  }
+
+  const onSubmit = (data: FormInputs) => {
+    setIsLoading(true)
+    postData(data)
+    reset()
   }
 
   return (
@@ -92,7 +116,7 @@ export const Contact: React.FC = () => {
                     {...register('body')}
                   />
                 </div>
-                <Button disabled={isButtonDisabled} isLoading={isButtonDisabled}>
+                <Button disabled={isLoading} isLoading={isLoading}>
                   Submit
                 </Button>
               </form>
