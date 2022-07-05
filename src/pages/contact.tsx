@@ -47,7 +47,7 @@ export const Contact: React.FC = () => {
     }
 
     if (isError) {
-      toast('Error sending the contact message.', { type: 'error' })
+      toast('An error has occurred.', { type: 'error' })
       setIsError(false)
     } else {
       toast('Message successfully sent.', { type: 'success' })
@@ -57,19 +57,21 @@ export const Contact: React.FC = () => {
   }, [shouldShowToastMessage])
 
   const postData = async (data: FormInputs) => {
-    const response = await axios.post(ENDPOINT_URL, data)
+    try {
+      const _ = await axios.post(ENDPOINT_URL, data)
 
-    setIsLoading(false)
-    if (response.status !== 200) {
+      reset()
+    } catch (err) {
       setIsError(true)
     }
+
+    setIsLoading(false)
     setShouldShowToastMessage(true)
   }
 
   const onSubmit = (data: FormInputs) => {
     setIsLoading(true)
     postData(data)
-    reset()
   }
 
   return (

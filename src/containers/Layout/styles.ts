@@ -67,7 +67,7 @@ export const footerFlex = classnames(
   justifyContent('justify-end', 'tablet:justify-between' as any),
   gap('gap-8'),
   alignItems('items-center'),
-  textColor('text-blue-200'),
+  textColor('text-violet-400'),
   fontWeight('font-bold'),
   backgroundColor('bg-gray-600'),
   padding('py-2', 'px-4'),
