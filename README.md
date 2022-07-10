@@ -1,12 +1,8 @@
 # **Portfolio**
 
-This is my portfolio project made with Gatsby, and deployed to GitHub Pages. You can visit it here:
-
-https://www.berkeyoncaci.com
+This is my portfolio project made with Gatsby, and deployed to GitHub Pages. [You can visit it here](https://www.berkeyoncaci.com/)
 
 Also, you can customize it for your own use.
-
-<br>
 
 ## **Getting Started**
 
@@ -16,15 +12,11 @@ Also, you can customize it for your own use.
 yarn develop
 ```
 
-<br>
-
 ### **Starting in Production Mode**
 
 ```bash
 yarn start
 ```
-
-<br>
 
 ### **Deploying**
 
@@ -35,8 +27,6 @@ yarn deploy
 ```
 
 > Also, if you have a custom domain configured, it would help to have a `CNAME` file in public folder.
-
-<br>
 
 ### **Analyzing**
 
