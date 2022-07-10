@@ -1,14 +1,10 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { graphql, PageProps } from 'gatsby'
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { Button, Card } from 'components'
+import { Card } from 'components'
 import { Layout } from 'containers'
-import { DeviceType, useDeviceType } from 'utils/useDeviceType'
 
 const IndexPage: React.FC<PageProps> = () => {
-  const deviceType = useDeviceType()
-
   return (
     <>
       <Helmet>
@@ -43,21 +39,6 @@ const IndexPage: React.FC<PageProps> = () => {
                   More on my projects can be found on Projects page and my GitHub profile.
                 </div>
               </div>
-
-              {/* TODO: add hyperlinks here(to props) etc. */}
-              {deviceType !== DeviceType.MOBILE && (
-                <div className="flex flex-row-reverse mt-5">
-                  <Button
-                    icon={{ name: faLinkedin }}
-                    href="https://www.linkedin.com/in/berkeyoncaci"
-                  >
-                    LinkedIn
-                  </Button>
-                  <Button icon={{ name: faGithub }} href="https://github.com/berke581">
-                    Github
-                  </Button>
-                </div>
-              )}
             </>
           }
         />

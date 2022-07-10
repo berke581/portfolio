@@ -1,9 +1,13 @@
 import React, { useMemo } from 'react'
 import { classnames, borderColor, borderWidth, height, margin, width } from 'tailwindcss-classnames'
 import { DirectionType } from 'common/types'
+// import { DefaultColors } from 'tailwindcss/types/generated/colors'
 
 export type DividerProps = {
   direction: DirectionType
+  // TODO: fix color typing and add color support
+  // https://kimmo.blog/posts/6-advanced-typescript-the-ultimate-tailwind-typings/
+  // color?: string
   children?: React.ReactNode
 }
 

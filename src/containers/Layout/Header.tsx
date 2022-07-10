@@ -1,25 +1,20 @@
 import React, { useMemo } from 'react'
 import { faGithub, faLinkedin, faMedium } from '@fortawesome/free-brands-svg-icons'
-import { Divider, Icon } from 'components'
+import { Icon } from 'components'
 import { Menu } from 'containers'
 import { useDeviceType, DeviceType } from 'utils/useDeviceType'
+import ClientOnly from 'utils/ClientOnly'
 import * as styles from './styles'
 
 export const Header: React.FC = () => {
   const deviceType = useDeviceType()
 
-  const showDivider = useMemo(
-    () => deviceType === DeviceType.LAPTOP || deviceType === DeviceType.DESKTOP,
-    [deviceType],
-  )
   const isHamburger = useMemo(() => deviceType === DeviceType.MOBILE, [deviceType])
 
   return (
     <header className={styles.headerFlex}>
       <div className={styles.headerInnerFlex}>
-        {/* <div> */}
         Berke YONCACI
-        {showDivider && <Divider direction="vertical" />}
         <div className={styles.iconFlex}>
           <Icon
             href="https://www.linkedin.com/in/berkeyoncaci"
@@ -41,9 +36,12 @@ export const Header: React.FC = () => {
           />
         </div>
       </div>
-      <div>
-        <Menu isHamburger={isHamburger} />
-      </div>
+
+      <ClientOnly>
+        <div>
+          <Menu isHamburger={isHamburger} />
+        </div>
+      </ClientOnly>
     </header>
   )
 }

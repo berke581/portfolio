@@ -24,7 +24,6 @@ export const colors = {
   gitHub: '#333333',
   linkedIn: '#2867b2',
   medium: '#000000',
-  mapMarker: '#e5e7eb',
 }
 
 // Layout
@@ -48,9 +47,7 @@ export const headerFlex = classnames(
 
 export const headerInnerFlex = classnames(
   display('flex'),
-  flexDirection('flex-col', 'laptop:flex-row' as any),
-  alignItems('laptop:items-center' as any),
-  height('laptop:h-full' as any),
+  flexDirection('flex-col'),
   fontSize('text-lg'),
   fontWeight('font-semibold'),
   margin('m-2'),
@@ -64,28 +61,13 @@ export const link = classnames(textColor('text-pink-500'), textDecoration('hover
 
 export const footerFlex = classnames(
   display('flex'),
-  justifyContent('justify-end', 'tablet:justify-between' as any),
-  gap('gap-8'),
+  gap('gap-2'),
   alignItems('items-center'),
-  textColor('text-violet-400'),
+  textColor('text-teal-400'),
   fontWeight('font-bold'),
-  backgroundColor('bg-gray-600'),
+  backgroundColor('bg-slate-500'),
   padding('py-2', 'px-4'),
   position('absolute'),
   inset('bottom-0', 'left-0', 'right-0'),
   height('h-14'),
 )
-
-export const footerInnerFlex = classnames(
-  display('flex'),
-  alignItems('items-center'),
-  height('h-full'),
-)
-
-export const footerLocationFlex = classnames(
-  display('flex'),
-  alignItems('items-center'),
-  gap('gap-1'),
-)
-
-export const mapMarker = classnames(margin('mx-1'))
