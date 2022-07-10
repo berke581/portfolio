@@ -1,54 +1,53 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+# **Portfolio**
 
-## 🚀 Quick start
+This is my portfolio project made with Gatsby, and deployed to GitHub Pages. You can visit it here:
 
-1.  **Create a Gatsby site.**
+https://www.berkeyoncaci.com
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+Also, you can customize it for your own use.
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+<br>
 
-2.  **Start developing.**
+## **Getting Started**
 
-    Navigate into your new site’s directory and start it up.
+### **Running the Development Server**
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+```bash
+yarn develop
+```
 
-3.  **Open the code and start customizing!**
+<br>
 
-    Your site is now running at http://localhost:8000!
+### **Starting in Production Mode**
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+```bash
+yarn start
+```
 
-4.  **Learn more**
+<br>
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+### **Deploying**
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+> In order to deploy, you need to have a branch called `prod` in your repository, which should be the source branch in GitHub Pages. After that, you can run the following command.
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+```bash
+yarn deploy
+```
 
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+> Also, if you have a custom domain configured, it would help to have a `CNAME` file in public folder.
 
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+<br>
 
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+### **Analyzing**
 
-## 🚀 Quick start (Gatsby Cloud)
+> To view bundle sizes interactively, use the following command.
 
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
+```bash
+yarn analyze
+```
 
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+> If you just need the JSON report, building for production will be enough, `report.json` file will be present in the `/public` path after build.
+
+```bash
+yarn build
+```
