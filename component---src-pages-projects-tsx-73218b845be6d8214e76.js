@@ -1,0 +1,18 @@
+"use strict";
+(self["webpackChunkportfolio"] = self["webpackChunkportfolio"] || []).push([[317],{
+
+/***/ 8438:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7294);
+/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5414);
+/* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7190);
+/* harmony import */ var components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5168);
+/* harmony import */ var containers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6280);
+var ProjectCard=function ProjectCard(_ref){var title=_ref.title,content=_ref.content,link=_ref.link;return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(components__WEBPACK_IMPORTED_MODULE_2__/* .Card */ .Zb,{header:title,contentTop:content,footer:/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(components__WEBPACK_IMPORTED_MODULE_2__/* .Button */ .zx,{icon:{name:_fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__/* .faGithub */ .zhw},href:link},"Project Details"),shadowOnHover:true});};var ProjectsPage=function ProjectsPage(){return/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment,null,/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_1__/* .Helmet */ .q,null,/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("meta",{charSet:"utf-8"}),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("title",null,"Projects | Berke YONCACI")),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(containers__WEBPACK_IMPORTED_MODULE_3__/* .Layout */ .A,null,/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div",{className:"grid grid-cols-1 tablet:grid-cols-2"},/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(ProjectCard,{title:"Contact Form API",content:"Contact Form API written in Go, and deployed to Heroku. I used this service for the Contact Page in my Portfolio. It sends me an e-mail when somebody uses the contact page.",link:"https://github.com/berke581/go-contact-form"}),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(ProjectCard,{title:"Portfolio",content:"My portfolio website. Created using Gatsby and Tailwind  CSS.",link:"https://github.com/berke581/portfolio"}),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(ProjectCard,{title:"Registration/Login Backend",content:"User registration API created using Spring Boot and Spring Security. PostgreSQL is used as the database.",link:"https://github.com/berke581/registration-backend"}),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(ProjectCard,{title:"ModelViewer [WIP]",content:"I've been working on this project to get better at OpenGL and Graphics Programming in general. The purpose of this project is to create a basic rendering engine that will render 3D models. It is currently work in progress.",link:"https://github.com/berke581/ModelViewer"}),/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(ProjectCard,{title:"Minesweeper",content:"Minesweeper game created using Vanilla Javascript.",link:"https://github.com/berke581/Minesweeper"}))));};/* harmony default export */ __webpack_exports__["default"] = (ProjectsPage);
+
+/***/ })
+
+}]);
+//# sourceMappingURL=component---src-pages-projects-tsx-73218b845be6d8214e76.js.map
