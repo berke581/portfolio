@@ -73,6 +73,6 @@ export const footerFlex = classnames(
   padding('py-2', 'px-4'),
   position('absolute'),
   inset('bottom-0', 'left-0', 'right-0'),
-  height('h-14'),
+  height('h-12'),
   boxShadow('shadow-[0_4px_4px_4px_rgba(0,0,0,1)]' as any),
 )
