@@ -1,7 +1,7 @@
 import {
   classnames,
   alignItems,
-  backgroundColor,
+  // backgroundColor,
   borderColor,
   borderWidth,
   display,
@@ -18,6 +18,9 @@ import {
   position,
   textColor,
   textDecoration,
+  gradientColorStops,
+  backgroundImage,
+  boxShadow,
 } from 'tailwindcss-classnames'
 
 export const colors = {
@@ -65,9 +68,11 @@ export const footerFlex = classnames(
   alignItems('items-center'),
   textColor('text-teal-400'),
   fontWeight('font-bold'),
-  backgroundColor('bg-slate-500'),
+  backgroundImage('bg-gradient-to-tr'),
+  gradientColorStops('from-slate-600', 'via-slate-500', 'to-slate-400'),
   padding('py-2', 'px-4'),
   position('absolute'),
   inset('bottom-0', 'left-0', 'right-0'),
   height('h-14'),
+  boxShadow('shadow-[0_4px_4px_4px_rgba(0,0,0,1)]' as any),
 )
