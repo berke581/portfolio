@@ -1,7 +1,6 @@
 import React, { useMemo, ComponentPropsWithoutRef, useCallback } from 'react'
 import { Link } from 'gatsby'
 import { LinkGetProps } from '@reach/router'
-import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome'
 import { TailSpin } from 'react-loader-spinner'
 import tailwindColors from 'tailwindcss/colors'
 import { classnames } from 'tailwindcss-classnames'
@@ -12,7 +11,8 @@ export type ButtonProps = {
   to?: string
   href?: string
   variant?: ButtonVariantType
-  icon?: { name: FontAwesomeIconProps['icon']; placement?: IconPlacementType }
+  // TODO: maybe use IconType from react-icons
+  icon?: { element: JSX.Element; placement?: IconPlacementType }
   isLoading?: boolean
 } & ComponentPropsWithoutRef<'button'>
 
@@ -44,7 +44,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const InnerButton = useCallback(
       () => (
         <div className={buttonInnerStyle}>
-          {icon && <FontAwesomeIcon icon={icon.name} />}
+          {icon && icon.element}
           {children}
           {isLoading && <TailSpin width={30} height={30} color={tailwindColors.gray['600']} />}
         </div>

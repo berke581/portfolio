@@ -1,6 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { SiGithub } from 'react-icons/si'
 import { Button, Card } from 'components'
 import { Layout } from 'containers'
 
@@ -14,7 +14,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, content, link }) => (
     header={title}
     contentTop={content}
     footer={
-      <Button icon={{ name: faGithub }} href={link}>
+      <Button icon={{ element: <SiGithub /> }} href={link}>
         Project Details
       </Button>
     }

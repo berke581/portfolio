@@ -1,6 +1,8 @@
 import React from 'react'
 import { PageProps } from 'gatsby'
 import { Helmet } from 'react-helmet'
+import { CgClose } from 'react-icons/cg'
+import tailwindColors from 'tailwindcss/colors'
 import {
   classnames,
   alignItems,
@@ -9,8 +11,6 @@ import {
   height,
   justifyContent,
 } from 'tailwindcss-classnames'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { Button } from 'components'
 
 const notFoundFlex = classnames(
@@ -29,7 +29,7 @@ const NotFoundPage: React.FC<PageProps> = () => {
         <title>Page Not Found</title>
       </Helmet>
       <div className={notFoundFlex}>
-        <FontAwesomeIcon icon={faTimes} size={'9x'} color="#333" />
+        <CgClose size={200} color={tailwindColors.gray['800']} />
         Page Not found!
         <Button to="/">Go to Homepage</Button>
       </div>

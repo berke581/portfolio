@@ -57,14 +57,20 @@ export const headerInnerFlex = classnames(
   textColor('text-gray-800'),
 )
 
-export const iconFlex = classnames(display('flex'), gap('gap-1'))
+export const iconFlex = classnames(
+  display('flex'),
+  gap('gap-0'),
+  height('h-6'),
+  alignItems('items-center'),
+)
 
 // Footer
 export const link = classnames(textColor('text-pink-500'), textDecoration('hover:underline'))
 
 export const footerFlex = classnames(
   display('flex'),
-  gap('gap-2'),
+  gap('gap-4'),
+  justifyContent('justify-between'),
   alignItems('items-center'),
   textColor('text-teal-400'),
   fontWeight('font-bold'),
@@ -76,3 +82,7 @@ export const footerFlex = classnames(
   height('h-12'),
   boxShadow('shadow-[0_4px_4px_4px_rgba(0,0,0,1)]' as any),
 )
+
+export const footerInnerFlex = classnames(display('flex'), gap('gap-2'), alignItems('items-center'))
+
+export const footerContactArea = classnames(textDecoration('hover:underline'))

@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { usePopper } from 'react-popper'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { FaBars } from 'react-icons/fa'
 import { Button, Divider } from 'components'
 import { MenuContainer } from './MenuContainer'
 import { MenuItem } from './MenuItem'
@@ -34,7 +34,7 @@ export const HamburgerMenu: React.FC = () => {
   return (
     <span ref={containerElementRef}>
       <Button
-        icon={{ name: faBars }}
+        icon={{ element: <FaBars size={20} /> }}
         ref={setReferenceElement}
         onClick={() => setIsVisible((prev) => !prev)}
       />

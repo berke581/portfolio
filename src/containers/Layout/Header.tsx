@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
-import { faGithub, faLinkedin, faMedium } from '@fortawesome/free-brands-svg-icons'
-import { Icon } from 'components'
+import { SiGithub, SiLinkedin, SiMedium } from 'react-icons/si'
+import { Divider, Icon } from 'components'
 import { Menu } from 'containers'
 import { useDeviceType, DeviceType } from 'utils/useDeviceType'
 import ClientOnly from 'utils/ClientOnly'
@@ -18,20 +18,22 @@ export const Header: React.FC = () => {
         <div className={styles.iconFlex}>
           <Icon
             href="https://www.linkedin.com/in/berkeyoncaci"
-            icon={faLinkedin}
-            size="lg"
+            element={SiLinkedin}
+            size={20}
             color={styles.colors.linkedIn}
           />
+          <Divider direction="vertical" />
           <Icon
             href="https://github.com/berke581"
-            icon={faGithub}
-            size="lg"
+            element={SiGithub}
+            size={20}
             color={styles.colors.gitHub}
           />
+          <Divider direction="vertical" />
           <Icon
             href="https://medium.com/@berkeyoncaci"
-            icon={faMedium}
-            size="lg"
+            element={SiMedium}
+            size={20}
             color={styles.colors.medium}
           />
         </div>

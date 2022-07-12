@@ -8,11 +8,6 @@ module.exports = {
     siteUrl: 'https://www.berkeyoncaci.com',
     description: 'Berke YONCACI portfolio website.',
   },
-  plugins: [
-    'gatsby-plugin-root-import',
-    'gatsby-plugin-postcss',
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-fontawesome-css`,
-  ],
+  plugins: ['gatsby-plugin-root-import', 'gatsby-plugin-postcss', `gatsby-plugin-react-helmet`],
   trailingSlash: 'always',
 }
