@@ -28,6 +28,14 @@
   }
 }
 
+@layer utilities {
+  .external-link {
+    background: url('images/link_external_icon.png') no-repeat 100% 0;
+    background-size: 14px 14px;
+    padding-right: 16px;
+  }
+}
+
 @layer components {
   .base-button {
     @apply px-4;

@@ -15,7 +15,7 @@ export const Footer: React.FC = () => {
         <span className="text-white">&bull;</span>
         <span>2022</span>
       </div>
-      <div className={styles.footerContactArea}>
+      <div>
         <Icon
           label={{ text: 'Contact', placement: 'left' }}
           href="mailto:berkeyoncaci@gmail.com"

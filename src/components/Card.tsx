@@ -11,6 +11,9 @@ import {
   scale,
   textColor,
   transitionProperty,
+  display,
+  flexDirection,
+  justifyContent,
 } from 'tailwindcss-classnames'
 
 export type CardProps = ComponentPropsWithoutRef<'div'> & {
@@ -36,7 +39,10 @@ export const Card: React.FC<CardProps> = ({
     boxShadow('shadow-md'),
     textColor('text-gray-600'),
     backgroundColor('bg-gray-100'),
+    display('flex'),
+    flexDirection('flex-col'),
     flex('flex-auto'),
+    justifyContent('justify-between'),
     height('min-h-[280px]' as any),
   )
   const enlargeOnHoverStyle = classnames(

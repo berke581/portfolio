@@ -65,8 +65,6 @@ export const iconFlex = classnames(
 )
 
 // Footer
-export const link = classnames(textColor('text-pink-500'), textDecoration('hover:underline'))
-
 export const footerFlex = classnames(
   display('flex'),
   gap('gap-4'),
@@ -84,5 +82,3 @@ export const footerFlex = classnames(
 )
 
 export const footerInnerFlex = classnames(display('flex'), gap('gap-2'), alignItems('items-center'))
-
-export const footerContactArea = classnames(textDecoration('hover:underline'))

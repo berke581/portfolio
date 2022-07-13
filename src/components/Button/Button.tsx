@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import { LinkGetProps } from '@reach/router'
 import { TailSpin } from 'react-loader-spinner'
 import tailwindColors from 'tailwindcss/colors'
+import cx from 'classnames'
 import { classnames } from 'tailwindcss-classnames'
 import * as styles from './styles'
 import { ButtonVariantType, IconPlacementType } from 'common/types'
@@ -23,7 +24,7 @@ const isActive = (args: LinkGetProps) => {
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ children, to, href, icon, isLoading, variant = 'primary', ...rest }, ref) => {
+  ({ children, to, href, icon, isLoading, variant = 'primary', className, ...rest }, ref) => {
     const buttonStyle = useMemo(
       () =>
         variant === 'primary'
@@ -54,16 +55,16 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     return to ? (
       // TODO: fix "any" usage here
-      <Link to={to} className={buttonStyle} getProps={isActive} ref={ref as any}>
+      <Link to={to} className={cx(buttonStyle, className)} getProps={isActive} ref={ref as any}>
         <InnerButton />
       </Link>
     ) : href ? (
       // TODO: pass ref here
-      <a href={href} className={buttonStyle} target="_blank" rel="noreferrer">
+      <a href={href} className={cx(buttonStyle, className)} target="_blank" rel="noreferrer">
         <InnerButton />
       </a>
     ) : (
-      <button className={buttonStyle} ref={ref} {...rest}>
+      <button className={cx(buttonStyle, className)} ref={ref} {...rest}>
         <InnerButton />
       </button>
     )
