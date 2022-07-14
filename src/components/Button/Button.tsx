@@ -4,7 +4,6 @@ import { LinkGetProps } from '@reach/router'
 import { TailSpin } from 'react-loader-spinner'
 import tailwindColors from 'tailwindcss/colors'
 import cx from 'classnames'
-import { classnames } from 'tailwindcss-classnames'
 import * as styles from './styles'
 import { ButtonVariantType, IconPlacementType } from 'common/types'
 
@@ -18,9 +17,7 @@ export type ButtonProps = {
 } & ComponentPropsWithoutRef<'button'>
 
 const isActive = (args: LinkGetProps) => {
-  return args.isCurrent
-    ? { className: classnames(styles.buttonBase, styles.buttonPrimaryActive) }
-    : {}
+  return args.isCurrent ? { className: cx(styles.buttonBase, styles.buttonPrimaryActive) } : {}
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -28,8 +25,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const buttonStyle = useMemo(
       () =>
         variant === 'primary'
-          ? classnames(styles.buttonBase, styles.buttonPrimary)
-          : classnames(styles.buttonBase, styles.buttonDanger),
+          ? cx(styles.buttonBase, styles.buttonPrimary)
+          : cx(styles.buttonBase, styles.buttonDanger),
       [variant],
     )
 
@@ -37,8 +34,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const buttonInnerStyle = useMemo(
       () =>
         !icon?.placement
-          ? classnames(styles.buttonInnerBase)
-          : classnames(styles.buttonInnerBase, styles.buttonInnerRight),
+          ? cx(styles.buttonInnerBase)
+          : cx(styles.buttonInnerBase, styles.buttonInnerRight),
       [icon],
     )
 

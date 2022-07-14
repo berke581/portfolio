@@ -3,23 +3,10 @@ import { PageProps } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import { CgClose } from 'react-icons/cg'
 import tailwindColors from 'tailwindcss/colors'
-import {
-  classnames,
-  alignItems,
-  display,
-  flexDirection,
-  height,
-  justifyContent,
-} from 'tailwindcss-classnames'
+import cx from 'classnames'
 import { Button } from 'components'
 
-const notFoundFlex = classnames(
-  height('h-screen'),
-  display('flex'),
-  flexDirection('flex-col'),
-  justifyContent('justify-center'),
-  alignItems('items-center'),
-)
+const notFoundFlex = cx('h-screen', 'flex', 'flex-col', 'justify-center', 'items-center')
 
 const NotFoundPage: React.FC<PageProps> = () => {
   return (

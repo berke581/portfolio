@@ -1,54 +1,37 @@
-import {
-  classnames,
-  alignItems,
-  backgroundColor,
-  borderColor,
-  borderRadius,
-  borderWidth,
-  display,
-  flexDirection,
-  fontSize,
-  fontWeight,
-  gap,
-  justifyContent,
-  margin,
-  padding,
-  textColor,
-} from 'tailwindcss-classnames'
+import cx from 'classnames'
 
-export const buttonBase = classnames(
-  padding('px-4', 'py-1'),
-  margin('m-2'),
-  display('inline-block'),
-  fontSize('text-lg'),
-  fontWeight('font-semibold'),
-  borderRadius('rounded-lg'),
-  borderWidth('border-2'),
+export const buttonBase = cx(
+  'px-4',
+  'py-1',
+  'm-2',
+  'inline-block',
+  'text-lg',
+  'font-semibold',
+  'rounded-lg',
+  'border-2',
 )
 
-export const buttonPrimary = classnames(
-  textColor('text-gray-800', 'hover:text-gray-200', 'disabled:text-gray-800'),
-  borderColor('border-gray-200', 'hover:border-gray-800', 'disabled:border-gray-300'),
-  backgroundColor('hover:bg-gray-800', 'disabled:bg-gray-200'),
+export const buttonPrimary = cx(
+  'text-gray-800',
+  'hover:text-gray-200',
+  'disabled:text-gray-800',
+  'border-gray-200',
+  'hover:border-gray-800',
+  'disabled:border-gray-300',
+  'hover:bg-gray-800',
+  'disabled:bg-gray-200',
 )
 
-export const buttonPrimaryActive = classnames(
-  textColor('text-gray-200'),
-  backgroundColor('bg-gray-800'),
-  borderColor('border-gray-800'),
+export const buttonPrimaryActive = cx('text-gray-200', 'bg-gray-800', 'border-gray-800')
+
+export const buttonDanger = cx(
+  'text-white',
+  'hover:text-blue-200',
+  'border-red-400',
+  'hover:border-red-600',
+  'bg-red-600',
 )
 
-export const buttonDanger = classnames(
-  textColor('text-white', 'hover:text-blue-200'),
-  borderColor('border-red-400', 'hover:border-red-600'),
-  backgroundColor('bg-red-600'),
-)
+export const buttonInnerBase = cx('flex', 'justify-center', 'items-center', 'gap-2')
 
-export const buttonInnerBase = classnames(
-  display('flex'),
-  justifyContent('justify-center'),
-  alignItems('items-center'),
-  gap('gap-2'),
-)
-
-export const buttonInnerRight = classnames(flexDirection('flex-row-reverse'))
+export const buttonInnerRight = cx('flex-row-reverse')

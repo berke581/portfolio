@@ -1,20 +1,5 @@
 import React, { ComponentPropsWithoutRef } from 'react'
-import {
-  classnames,
-  backgroundColor,
-  borderRadius,
-  boxShadow,
-  flex,
-  height,
-  margin,
-  padding,
-  scale,
-  textColor,
-  transitionProperty,
-  display,
-  flexDirection,
-  justifyContent,
-} from 'tailwindcss-classnames'
+import cx from 'classnames'
 
 export type CardProps = ComponentPropsWithoutRef<'div'> & {
   header?: string | React.ReactElement
@@ -32,32 +17,26 @@ export const Card: React.FC<CardProps> = ({
   enlargeOnHover = false,
   shadowOnHover = false,
 }) => {
-  const baseStyle = classnames(
-    margin('m-2'),
-    padding('p-2'),
-    borderRadius('rounded-md'),
-    boxShadow('shadow-md'),
-    textColor('text-gray-600'),
-    backgroundColor('bg-gray-100'),
-    display('flex'),
-    flexDirection('flex-col'),
-    flex('flex-auto'),
-    justifyContent('justify-between'),
-    height('min-h-[280px]' as any),
+  const baseStyle = cx(
+    'm-2',
+    'p-2',
+    'rounded-md',
+    'shadow-md',
+    'text-gray-600',
+    'bg-gray-100',
+    'flex',
+    'flex-col',
+    'flex-auto',
+    'justify-between',
+    'min-h-[280px]',
   )
-  const enlargeOnHoverStyle = classnames(
-    scale('hover:scale-105'),
-    transitionProperty('transition-transform'),
-  )
-  const shadowOnHoverStyle = classnames(
-    boxShadow('hover:shadow-lg'),
-    transitionProperty('transition-shadow'),
-  )
+  const enlargeOnHoverStyle = cx('hover:scale-105', 'transition-transform')
+  const shadowOnHoverStyle = cx('hover:shadow-lg', 'transition-shadow')
 
-  const style = classnames(
+  const style = cx(
     baseStyle,
-    enlargeOnHover ? enlargeOnHoverStyle : undefined,
-    shadowOnHover ? shadowOnHoverStyle : undefined,
+    enlargeOnHover && enlargeOnHoverStyle,
+    shadowOnHover && shadowOnHoverStyle,
   )
 
   return (

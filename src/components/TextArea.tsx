@@ -1,18 +1,5 @@
 import React, { ComponentPropsWithoutRef } from 'react'
-import {
-  classnames,
-  backgroundColor,
-  borderColor,
-  borderRadius,
-  borderWidth,
-  display,
-  flexDirection,
-  textColor,
-  width,
-  padding,
-  minHeight,
-  resize,
-} from 'tailwindcss-classnames'
+import cx from 'classnames'
 
 type TextAreaProps = ComponentPropsWithoutRef<'textarea'> & {
   label?: string
@@ -23,24 +10,24 @@ type TextAreaProps = ComponentPropsWithoutRef<'textarea'> & {
 
 // TODO: maybe combine input related
 // common styles into one style file
-const textAreaContainerStyle = classnames(display('flex'), flexDirection('flex-col'))
+const textAreaContainerStyle = cx('flex', 'flex-col')
 
-const textAreaBase = classnames(
-  width('w-full'),
-  minHeight('min-h-[300px]' as any),
-  borderWidth('border-2'),
-  borderRadius('rounded-md'),
-  backgroundColor('bg-white'),
-  padding('p-1'),
-  resize('resize-none'),
+const textAreaBase = cx(
+  'w-full',
+  'min-h-[300px]',
+  'border-2',
+  'rounded-md',
+  'bg-white',
+  'p-1',
+  'resize-none',
 )
-const textAreaNormal = classnames(borderColor('border-gray-300'))
-const textAreaError = classnames(borderColor('border-red-600'))
+const textAreaNormal = cx('border-gray-300')
+const textAreaError = cx('border-red-600')
 
 export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
   ({ label, placeholder, isRequired, isError, errorText, id, ...rest }, ref) => {
-    const textAreaStyle = classnames(textAreaBase, isError ? textAreaError : textAreaNormal)
-    const textAreaLabelStyle = classnames(textColor(isError ? 'text-red-600' : 'text-gray-600'))
+    const textAreaStyle = cx(textAreaBase, isError ? textAreaError : textAreaNormal)
+    const textAreaLabelStyle = cx(isError ? 'text-red-600' : 'text-gray-600')
 
     return (
       <div className={textAreaContainerStyle}>

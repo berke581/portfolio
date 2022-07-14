@@ -1,16 +1,6 @@
-import {
-  classnames,
-  backgroundColor,
-  borderRadius,
-  padding,
-  textColor,
-} from 'tailwindcss-classnames'
+import cx from 'classnames'
 
-export const menuItemBase = classnames(
-  textColor('text-gray-200'),
-  borderRadius('rounded-sm'),
-  backgroundColor('bg-gray-600', 'hover:bg-gray-700'),
-  padding('p-2'),
-)
+export const menuItemBase = cx('text-gray-200', 'rounded-sm', 'hover:bg-gray-700', 'p-2')
 
-export const menuItemActive = classnames(backgroundColor('bg-gray-700'))
+export const menuItemInactive = cx('bg-gray-600')
+export const menuItemActive = cx('bg-gray-700')
