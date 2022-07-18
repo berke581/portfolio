@@ -55,9 +55,9 @@ const ProjectsPage: React.FC = () => {
         <div className="grid grid-cols-1 tablet:grid-cols-2">
           <ProjectCard
             title="Contact Form API"
-            content="Contact Form API written in Go, and deployed to Heroku. I used this service for the Contact Page in my Portfolio. It sends me an e-mail when somebody uses the contact page."
+            content="Contact Form API written in Go, and deployed to Heroku. Also containerized with Docker. I used this service for the Contact Page in my Portfolio. It sends me an e-mail when somebody uses the contact page."
             link="https://github.com/berke581/go-contact-form"
-            technologies={['go']}
+            technologies={['go', 'docker']}
           />
           <ProjectCard
             title="Portfolio"

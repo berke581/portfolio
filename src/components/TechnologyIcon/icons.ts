@@ -4,6 +4,7 @@ import {
   SiCplusplus,
   SiOpengl,
   SiGo,
+  SiDocker,
   SiJava,
   SiSpringboot,
   SiPostgresql,
@@ -19,6 +20,7 @@ export type TechnologiesType =
   | 'cpp'
   | 'opengl'
   | 'go'
+  | 'docker'
   | 'java'
   | 'springboot'
   | 'postgresql'
@@ -55,6 +57,10 @@ export const TechnologyData: TechnologyDataType = {
   go: {
     label: 'Go',
     icon: { iconComponent: SiGo, color: '#00ADD8' },
+  },
+  docker: {
+    label: 'Docker',
+    icon: { iconComponent: SiDocker, color: '#2496ED' },
   },
   java: {
     label: 'Java',
