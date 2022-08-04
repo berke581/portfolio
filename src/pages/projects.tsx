@@ -66,9 +66,9 @@ const ProjectsPage: React.FC = () => {
             technologies={['typescript', 'react', 'gatsby', 'tailwind']}
           />
           <ProjectCard
-            title="Registration/Login Backend"
-            content="User registration API created using Spring Boot and Spring Security. PostgreSQL is used as the database."
-            link="https://github.com/berke581/registration-backend"
+            title="Movies API"
+            content="Simple RESTful CRUD movies API created using Spring Boot, PostgreSQL, Spring Data JPA, and Hibernate."
+            link="https://github.com/berke581/movies-api"
             technologies={['java', 'springboot', 'postgresql']}
           />
           <ProjectCard
