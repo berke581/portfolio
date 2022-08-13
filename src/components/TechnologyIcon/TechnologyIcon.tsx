@@ -7,7 +7,6 @@ export type TechnologyIconProps = {
   tooltipOnHover?: boolean
 }
 
-// TODO: fix tooltips, then enable tooltipOnHover
 export const TechnologyIcon: React.FC<TechnologyIconProps> = ({ name, tooltipOnHover = false }) => {
   const iconData = TechnologyData[name].icon
   const iconLabel = TechnologyData[name].label

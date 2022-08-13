@@ -33,7 +33,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, content, link, technol
           {technologies && (
             <div className="flex gap-1">
               {technologies.map((el, i) => (
-                <TechnologyIcon name={el} key={el + i} />
+                <TechnologyIcon name={el} key={el + i} tooltipOnHover />
               ))}
             </div>
           )}
