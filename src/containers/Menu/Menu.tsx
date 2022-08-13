@@ -2,21 +2,26 @@ import React from 'react'
 import { Button } from 'components'
 import { HamburgerMenu } from './HamburgerMenu'
 
+export type MenuOptionType = {
+  label: string
+  to: string
+}
+
 export type MenuProps = {
+  options: Array<MenuOptionType>
   isHamburger?: boolean
 }
 
-// TODO: unify menus
-export const Menu: React.FC<MenuProps> = ({ isHamburger = false }) => {
+export const Menu: React.FC<MenuProps> = ({ options, isHamburger = false }) => {
   return !isHamburger ? (
     <>
-      <Button to="/">Home</Button>
-      {/* <Button to="/about">About</Button> */}
-      {/* last slash is important for active page styling for button */}
-      <Button to="/projects/">Projects</Button>
-      <Button to="/contact/">Contact</Button>
+      {options.map(({ label, to }) => (
+        <Button to={to} key={label + to}>
+          {label}
+        </Button>
+      ))}
     </>
   ) : (
-    <HamburgerMenu />
+    <HamburgerMenu options={options} />
   )
 }

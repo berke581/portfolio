@@ -39,9 +39,26 @@ export const Header: React.FC = () => {
         </div>
       </div>
 
+      {/* TODO: skeleton here */}
       <ClientOnly>
         <div>
-          <Menu isHamburger={isHamburger} />
+          <Menu
+            options={[
+              {
+                label: 'Home',
+                to: '/',
+              },
+              {
+                label: 'Projects',
+                to: '/projects/',
+              },
+              {
+                label: 'Contact',
+                to: '/contact/',
+              },
+            ]}
+            isHamburger={isHamburger}
+          />
         </div>
       </ClientOnly>
     </header>

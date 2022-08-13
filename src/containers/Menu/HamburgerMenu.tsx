@@ -1,13 +1,17 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, Fragment } from 'react'
 import { usePopper } from 'react-popper'
 import { FaBars } from 'react-icons/fa'
 import { Button, Divider } from 'components'
+import { MenuOptionType } from './Menu'
 import { MenuContainer } from './MenuContainer'
 import { MenuItem } from './MenuItem'
 import { useHandleClickOutside } from 'utils/useHandleClickOutside'
 
-// TODO: unify menus
-export const HamburgerMenu: React.FC = () => {
+type HamburgerMenuProps = {
+  options: Array<MenuOptionType>
+}
+
+export const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ options }) => {
   const [referenceElement, setReferenceElement] = useState<HTMLElement | null>(null)
   const [popperElement, setPopperElement] = useState<HTMLElement | null>(null)
   const containerElementRef = useRef<HTMLElement>(null)
@@ -40,11 +44,12 @@ export const HamburgerMenu: React.FC = () => {
       />
       {isVisible && (
         <MenuContainer styles={styles} attributes={attributes} ref={setPopperElement}>
-          <MenuItem to="/">Home</MenuItem>
-          <Divider direction="horizontal" />
-          <MenuItem to="/projects/">Projects</MenuItem>
-          <Divider direction="horizontal" />
-          <MenuItem to="/contact/">Contact</MenuItem>
+          {options.map(({ label, to }, i) => (
+            <Fragment key={label + to}>
+              <MenuItem to={to}>{label}</MenuItem>
+              {i !== options.length - 1 && <Divider direction="horizontal" />}
+            </Fragment>
+          ))}
         </MenuContainer>
       )}
     </span>

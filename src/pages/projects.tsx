@@ -18,7 +18,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, content, link, technol
     contentTop={content}
     footer={
       <>
-        <Divider direction="horizontal" />
+        <Divider direction="horizontal" borderColorClassName="border-gray-300" />
         <div className="flex justify-between items-end mx-1">
           <Icon
             element={SiGithub}
