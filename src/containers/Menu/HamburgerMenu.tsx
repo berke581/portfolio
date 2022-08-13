@@ -38,7 +38,7 @@ export const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ options }) => {
   return (
     <span ref={containerElementRef}>
       <Button
-        icon={{ element: <FaBars size={20} /> }}
+        icon={{ iconComponent: FaBars, size: 20 }}
         ref={setReferenceElement}
         onClick={() => setIsVisible((prev) => !prev)}
       />

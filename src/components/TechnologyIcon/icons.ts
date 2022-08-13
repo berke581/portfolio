@@ -34,8 +34,6 @@ type TechnologyDataType = {
   [key in TechnologiesType]: {
     label: string
     icon: {
-      // TODO: use this convention everywhere
-      // instead of element
       iconComponent: IconType
       color?: string
     }

@@ -15,10 +15,10 @@ export const TechnologyIcon: React.FC<TechnologyIconProps> = ({ name, tooltipOnH
   return tooltipOnHover ? (
     <Tooltip
       text={iconLabel}
-      element={<Icon element={iconData.iconComponent} color={iconData.color} size={23} />}
+      element={<Icon iconComponent={iconData.iconComponent} color={iconData.color} size={23} />}
     />
   ) : (
-    <Icon element={iconData.iconComponent} color={iconData.color} size={23} />
+    <Icon iconComponent={iconData.iconComponent} color={iconData.color} size={23} />
   )
 }
 

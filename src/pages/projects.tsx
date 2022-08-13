@@ -21,7 +21,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, content, link, technol
         <Divider direction="horizontal" borderColorClassName="border-gray-300" />
         <div className="flex justify-between items-end mx-1">
           <Icon
-            element={SiGithub}
+            iconComponent={SiGithub}
             color={colors.gitHub}
             label={{
               text: 'Repository',

@@ -33,5 +33,3 @@ export const buttonDanger = cx(
 )
 
 export const buttonInnerBase = cx('flex', 'justify-center', 'items-center', 'gap-2')
-
-export const buttonInnerRight = cx('flex-row-reverse')

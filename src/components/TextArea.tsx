@@ -8,8 +8,6 @@ type TextAreaProps = ComponentPropsWithoutRef<'textarea'> & {
   errorText?: string
 }
 
-// TODO: maybe combine input related
-// common styles into one style file
 const textAreaContainerStyle = cx('flex', 'flex-col')
 
 const textAreaBase = cx(

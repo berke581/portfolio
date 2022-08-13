@@ -1,6 +1,7 @@
 import React, { useMemo, ComponentPropsWithoutRef, useCallback } from 'react'
 import { Link } from 'gatsby'
 import { LinkGetProps } from '@reach/router'
+import { IconBaseProps, IconType } from 'react-icons'
 import { TailSpin } from 'react-loader-spinner'
 import tailwindColors from 'tailwindcss/colors'
 import cx from 'classnames'
@@ -11,8 +12,7 @@ export type ButtonProps = {
   to?: string
   href?: string
   variant?: ButtonVariantType
-  // TODO: maybe use IconType from react-icons
-  icon?: { element: JSX.Element; placement?: IconPlacementType }
+  icon?: { iconComponent: IconType; placement?: IconPlacementType } & IconBaseProps
   isLoading?: boolean
 } & ComponentPropsWithoutRef<'button'>
 
@@ -30,24 +30,17 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       [variant],
     )
 
-    // TODO: finish here, it doesn't work properly now
-    const buttonInnerStyle = useMemo(
-      () =>
-        !icon?.placement
-          ? cx(styles.buttonInnerBase)
-          : cx(styles.buttonInnerBase, styles.buttonInnerRight),
-      [icon],
-    )
-
+    const { iconComponent: IconComponent, placement, ...iconRest } = icon || {}
     const InnerButton = useCallback(
       () => (
-        <div className={buttonInnerStyle}>
-          {icon && icon.element}
+        <div className={styles.buttonInnerBase}>
+          {placement == 'left' && icon && IconComponent && <IconComponent {...iconRest} />}
           {children}
+          {placement == 'right' && icon && IconComponent && <IconComponent {...iconRest} />}
           {isLoading && <TailSpin width={30} height={30} color={tailwindColors.gray['600']} />}
         </div>
       ),
-      [buttonStyle, buttonInnerStyle, icon, children, isLoading],
+      [buttonStyle, styles.buttonInnerBase, icon, children, isLoading],
     )
 
     return to ? (

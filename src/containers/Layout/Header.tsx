@@ -18,21 +18,21 @@ export const Header: React.FC = () => {
         <div className={styles.iconFlex}>
           <Icon
             href="https://www.linkedin.com/in/berkeyoncaci"
-            element={SiLinkedin}
+            iconComponent={SiLinkedin}
             size={20}
             color={styles.colors.linkedIn}
           />
           <Divider direction="vertical" />
           <Icon
             href="https://github.com/berke581"
-            element={SiGithub}
+            iconComponent={SiGithub}
             size={20}
             color={styles.colors.gitHub}
           />
           <Divider direction="vertical" />
           <Icon
             href="https://medium.com/@berkeyoncaci"
-            element={SiMedium}
+            iconComponent={SiMedium}
             size={20}
             color={styles.colors.medium}
           />

@@ -4,7 +4,6 @@ import tailwindColors from 'tailwindcss/colors'
 import { Icon } from 'components'
 import * as styles from './styles'
 
-// TODO: maybe create HyperLink component
 export const Footer: React.FC = () => {
   return (
     <footer className={styles.footerFlex}>
@@ -19,7 +18,7 @@ export const Footer: React.FC = () => {
         <Icon
           label={{ text: 'Contact', placement: 'left' }}
           href="mailto:berkeyoncaci@gmail.com"
-          element={MdAlternateEmail}
+          iconComponent={MdAlternateEmail}
           size={20}
           color={tailwindColors.teal['400']}
         />

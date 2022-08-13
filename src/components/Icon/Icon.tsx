@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { IconBaseProps } from 'react-icons'
+import { IconBaseProps, IconType } from 'react-icons'
 import cx from 'classnames'
 import { LabelPlacementType } from 'common/types'
 import * as styles from './styles'
 
 export type IconProps = {
-  element: React.FC
+  iconComponent: IconType
   label?: {
     text: string
     placement: LabelPlacementType
@@ -15,20 +15,30 @@ export type IconProps = {
   href?: string
 } & IconBaseProps
 
+const isExternalLink = (href: string) => {
+  const externalPattern = /^((http|https|ftp):\/\/)/
+  return externalPattern.test(href)
+}
+
 export const Icon = React.forwardRef<HTMLElement, IconProps>(
-  ({ to, label, href, element, className, ...rest }, ref) => {
-    const Element = element
+  ({ to, label, href, iconComponent, className, target, ...rest }, ref) => {
+    const IconComponent = iconComponent
 
     const InnerIcon = () => {
-      const externalPattern = /^((http|https|ftp):\/\/)/
-      const styles = href ? (externalPattern.test(href) ? 'external-link' : undefined) : undefined
+      const externalLinkIconStyle = href
+        ? isExternalLink(href)
+          ? 'external-link'
+          : undefined
+        : undefined
+      const externalLinkTextStyle = href ? 'hover:underline' : undefined
+      const styles = cx(externalLinkIconStyle, externalLinkTextStyle)
 
       const labelStyled = label && <span className={styles}>{label.text}</span>
 
       return (
         <>
           {label && label.placement === 'left' && labelStyled}
-          <Element {...rest} />
+          <IconComponent {...rest} />
           {label && label.placement === 'right' && labelStyled}
         </>
       )
@@ -40,7 +50,12 @@ export const Icon = React.forwardRef<HTMLElement, IconProps>(
         <InnerIcon />
       </Link>
     ) : href ? (
-      <a className={cx(styles.iconContainer, className)} href={href} ref={ref as any}>
+      <a
+        className={cx(styles.iconContainer, className)}
+        href={href}
+        target={target || (isExternalLink(href) ? '_blank' : undefined)}
+        ref={ref as any}
+      >
         <InnerIcon />
       </a>
     ) : (
