@@ -30,7 +30,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       [variant],
     )
 
-    const { iconComponent: IconComponent, placement, ...iconRest } = icon || {}
+    const { iconComponent: IconComponent, placement = 'left', ...iconRest } = icon || {}
     const InnerButton = useCallback(
       () => (
         <div className={styles.buttonInnerBase}>
