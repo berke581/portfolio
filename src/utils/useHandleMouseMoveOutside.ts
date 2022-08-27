@@ -3,8 +3,8 @@ import { useEffect } from 'react'
 export const useHandleMouseMoveOutside = (element: HTMLElement | null, callback: () => void) => {
   // Call the callback function when mouse moves outside element
   const handleMouseMoveOutside = (event: MouseEvent) => {
-    // TODO: handle any
-    if (element && !element.contains(event.target as any)) {
+    // NOTE: casting due to: https://stackoverflow.com/questions/61164018/typescript-ev-target-and-node-contains-eventtarget-is-not-assignable-to-node
+    if (element && !element.contains(event.target as HTMLElement)) {
       callback()
     }
   }

@@ -44,7 +44,7 @@ export const Icon = React.forwardRef<HTMLElement, IconProps>(
       )
     }
 
-    // any usage due to: https://github.com/gatsbyjs/gatsby/issues/34325
+    // NOTE: any usage due to: https://github.com/gatsbyjs/gatsby/issues/34325
     return to ? (
       <Link className={cx(styles.iconContainer, className)} to={to} ref={ref as any}>
         <InnerIcon />

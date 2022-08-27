@@ -44,7 +44,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     )
 
     return to ? (
-      // TODO: fix "any" usage here
+      // NOTE: any usage due to: https://github.com/gatsbyjs/gatsby/issues/34325
       <Link to={to} className={cx(buttonStyle, className)} getProps={isActive} ref={ref as any}>
         <InnerButton />
       </Link>
