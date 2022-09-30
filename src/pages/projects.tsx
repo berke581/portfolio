@@ -31,7 +31,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, content, link, technol
             size={23}
           />
           {technologies && (
-            <div className="flex gap-1">
+            <div className="flex gap-1 flex-wrap">
               {technologies.map((el, i) => (
                 <TechnologyIcon name={el} key={el + i} tooltipOnHover />
               ))}
@@ -53,6 +53,20 @@ const ProjectsPage: React.FC = () => {
       </Helmet>
       <Layout>
         <div className="grid grid-cols-1 tablet:grid-cols-2">
+          <ProjectCard
+            title="DrinkBase"
+            content="DrinkBase is a Full-Stack Node.js application with Express, MongoDB and Typescript. It is an application for sharing and browsing cocktail recipes."
+            link="https://github.com/berke581/drinkbase"
+            technologies={[
+              'typescript',
+              'javascript',
+              'nodejs',
+              'mongodb',
+              'jquery',
+              'sass',
+              'pug',
+            ]}
+          />
           <ProjectCard
             title="Contact Form API"
             content="Contact Form API written in Go, and deployed to Heroku. Also containerized with Docker. I used this service for the Contact Page in my Portfolio. It sends me an e-mail when somebody uses the contact page."

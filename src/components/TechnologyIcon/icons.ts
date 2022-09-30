@@ -13,6 +13,11 @@ import {
   SiReact,
   SiGatsby,
   SiTailwindcss,
+  SiMongodb,
+  SiNodedotjs,
+  SiJquery,
+  SiSass,
+  SiPug,
 } from 'react-icons/si'
 
 export type TechnologiesType =
@@ -29,6 +34,11 @@ export type TechnologiesType =
   | 'react'
   | 'gatsby'
   | 'tailwind'
+  | 'nodejs'
+  | 'mongodb'
+  | 'jquery'
+  | 'sass'
+  | 'pug'
 
 type TechnologyDataType = {
   [key in TechnologiesType]: {
@@ -92,4 +102,24 @@ export const TechnologyData: TechnologyDataType = {
     label: 'Tailwind CSS',
     icon: { iconComponent: SiTailwindcss, color: '#06B6D4' },
   },
+  nodejs: {
+    label: 'Node.js',
+    icon: { iconComponent: SiNodedotjs, color: '#339933' },
+  },
+  mongodb: {
+    label: 'MongoDB',
+    icon: { iconComponent: SiMongodb, color: '#47A248' },
+  },
+  jquery: {
+    label: 'jQuery',
+    icon: { iconComponent: SiJquery, color: '#0769AD' },
+  },
+  sass: {
+    label: 'Sass',
+    icon: { iconComponent: SiSass, color: '#CC6699' },
+  },
+  pug: {
+    label: 'Pug',
+    icon: { iconComponent: SiPug, color: '#A86454' },
+  }
 }
