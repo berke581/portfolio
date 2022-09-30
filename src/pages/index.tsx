@@ -20,16 +20,12 @@ const IndexPage: React.FC<PageProps> = () => {
                   Hi, I&apos;m <span className="text-violet-600">Berke</span>.
                 </div>
                 <div className="m-2 text-2xl">
-                  I am a self-motivated programmer and a{' '}
-                  <span className="text-gray-600">computer engineering</span> student at{' '}
+                  I am a self-motivated programmer and a senior{' '}
+                  <span className="text-gray-600">Computer Engineering</span> student at{' '}
                   <span className="text-gray-600">Ankara University</span>.
                 </div>
                 <div className="m-2 text-2xl">
-                  I am interested in web development in general, I&apos;ve worked as a part-time web
-                  developer, mainly on the frontend side. Currently interested in backend
-                  technologies and languages, such as Go and Java Spring. Also, I like to use Go for
-                  other projects besides web development, since it&apos;s a performant and scalable
-                  language.
+                  I am mainly interested in Full Stack Development.
                 </div>
                 <div className="m-2 text-2xl">
                   Also, being a Computer Graphics enthusiast, I have been working on projects using
