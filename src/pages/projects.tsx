@@ -8,7 +8,7 @@ import { colors } from 'containers/Layout/styles'
 
 type ProjectCardProps = {
   title: string
-  content: string
+  content: string | React.ReactElement
   link: string
   technologies?: Array<TechnologiesType>
 }
@@ -55,7 +55,21 @@ const ProjectsPage: React.FC = () => {
         <div className="grid grid-cols-1 tablet:grid-cols-2">
           <ProjectCard
             title="DrinkBase"
-            content="DrinkBase is a Full-Stack Node.js application with Express, MongoDB and Typescript. It is an application for sharing and browsing cocktail recipes."
+            content={
+              <>
+                DrinkBase is a Full-Stack Node.js application with Express, MongoDB and Typescript.
+                It is an application for sharing and browsing cocktail recipes. You can{' '}
+                <a
+                  href="https://drinkbase.herokuapp.com/"
+                  className="text-blue-600 hover:underline"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  view a Live Demo clicking here
+                </a>
+                . Also you can check the GitHub repository out and give me feedback!
+              </>
+            }
             link="https://github.com/berke581/drinkbase"
             technologies={[
               'typescript',
