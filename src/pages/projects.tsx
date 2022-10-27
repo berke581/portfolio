@@ -60,7 +60,7 @@ const ProjectsPage: React.FC = () => {
                 DrinkBase is a Full-Stack Node.js application with Express, MongoDB and Typescript.
                 It is an application for sharing and browsing cocktail recipes. You can{' '}
                 <a
-                  href="https://drinkbase.herokuapp.com/"
+                  href="https://drinkbase.berkeyoncaci.com/"
                   className="text-blue-600 hover:underline"
                   target="_blank"
                   rel="noreferrer"
