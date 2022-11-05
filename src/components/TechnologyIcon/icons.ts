@@ -18,6 +18,7 @@ import {
   SiJquery,
   SiSass,
   SiPug,
+  SiRedis,
 } from 'react-icons/si'
 
 export type TechnologiesType =
@@ -39,6 +40,7 @@ export type TechnologiesType =
   | 'jquery'
   | 'sass'
   | 'pug'
+  | 'redis'
 
 type TechnologyDataType = {
   [key in TechnologiesType]: {
@@ -121,5 +123,9 @@ export const TechnologyData: TechnologyDataType = {
   pug: {
     label: 'Pug',
     icon: { iconComponent: SiPug, color: '#A86454' },
-  }
+  },
+  redis: {
+    label: 'Redis',
+    icon: { iconComponent: SiRedis, color: '#DC382D' },
+  },
 }
